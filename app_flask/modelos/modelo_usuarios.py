@@ -17,6 +17,28 @@ class Usuario:
         self.fecha_creacion = datos['fecha_creacion']
         self.fecha_actualizacion = datos['fecha_actualizacion']
 
+#crear un usuario
+
+    @classmethod
+    def crear_uno(cls, datos):
+        tipo_usuario = 1 if datos.get('es_artesano') == 'on' else 2
+        query = """
+                INSERT INTO usuarios(nombre, apellido, correo_electronico, password, direccion, ciudad, region, tipo_usuario)
+                VALUES (%(nombre)s, %(apellido)s, %(email)s, %(password)s, %(direccion)s, %(ciudad)s, %(region)s, %(tipo_usuario)s);
+                """
+        datos_usuario = {
+            'nombre': datos['nombre'],
+            'apellido': datos['apellido'],
+            'email': datos['email'],
+            'password': datos['password'],
+            'direccion': datos['direccion'],
+            'ciudad': datos['ciudad'],
+            'region': datos['region'],
+            'tipo_usuario': tipo_usuario
+        }
+        return connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
+
+
     @staticmethod
     def validar_registro(datos):
         es_valido = True

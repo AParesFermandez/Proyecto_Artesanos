@@ -3,28 +3,61 @@
 <head>
   <meta charset="UTF-8">
   <title>Página con Barra de Navegación y Columnas</title>
-  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css">
 </head>
 <body>
-  <div class="navbar">
-    <h2>Barra de Navegación</h2>
-    <div class="nav-buttons">
-      <button onclick="location.href='/procesa/login'" class="btn">Iniciar Sesión</button>
-      <button onclick="location.href='/procesa/registro'" class="btn">Registrarse</button>
+  <!-- Barra de Navegación -->
+  <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <div class="container-fluid">
+      <a class="navbar-brand" href="#">Pasion Artesana</a>
+      <div class="navbar-collapse" id="navbarNav">
+        <ul class="navbar-nav ms-auto">
+          <li class="nav-item">
+            <a class="nav-link" href="/login">Iniciar Sesión</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="/registro">Registrarse</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Contenido de la Página -->
+  <div class="container mt-4">
+    <div class="row">
+      <div class="col-lg-8">
+        <h1>Contenido de la Página</h1>
+        <!-- Imagen Grande con Texto Abajo -->
+        <div class="text-center">
+          <img src="imagen1.jpg" class="img-fluid rounded mb-3" alt="Imagen Artesano">
+          <h2>Artesano</h2>
+          <p>Texto sobre el artesano y lo que hace.</p>
+        </div>
+        <!-- Imagen Pequeña con Descripción -->
+        <div class="text-center mt-5">
+          <img src="producto.jpg" class="img-fluid rounded mb-3" alt="Producto Artesano">
+          <h2>Producto</h2>
+          <p>Descripción del producto.</p>
+        </div>
+      </div>
+      <div class="col-lg-4">
+        <!-- Botones Rectangulares -->
+        <div class="mb-4">
+          <button class="btn btn-primary d-block w-100 mb-2">Botón 1</button>
+          <button class="btn btn-secondary d-block w-100 mb-2">Botón 2</button>
+          <button class="btn btn-info d-block w-100">Botón 3</button>
+        </div>
+        <!-- Botones Redes Sociales -->
+        <div class="text-center">
+          <button class="btn btn-outline-primary btn-sm m-1">Facebook</button>
+          <button class="btn btn-outline-info btn-sm m-1">Twitter</button>
+          <button class="btn btn-outline-danger btn-sm m-1">Instagram</button>
+        </div>
+      </div>
     </div>
   </div>
 
-  <h1>Contenido de la Página</h1>
-
-  <div class="container">
-    <div class="column big">
-      <h2>Columna Grande</h2>
-      <p>Este es el contenido de la columna grande. Puede contener más elementos y ser el doble de ancho que la otra columna.</p>
-    </div>
-    <div class="column">
-      <h2>Columna Pequeña</h2>
-      <p>Este es el contenido de la columna pequeña. Puede contener menos elementos que la columna grande.</p>
-    </div>
-  </div>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
