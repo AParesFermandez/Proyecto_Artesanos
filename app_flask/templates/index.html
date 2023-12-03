@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Página con Barra de Navegación y Columnas</title>
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <div class="navbar">
+    <h2>Barra de Navegación</h2>
+    <div class="nav-buttons">
+      <button onclick="location.href='/procesa/login'" class="btn">Iniciar Sesión</button>
+      <button onclick="location.href='/procesa/registro'" class="btn">Registrarse</button>
+    </div>
+  </div>
+
+  <h1>Contenido de la Página</h1>
+
+  <div class="container">
+    <div class="column big">
+      <h2>Columna Grande</h2>
+      <p>Este es el contenido de la columna grande. Puede contener más elementos y ser el doble de ancho que la otra columna.</p>
+    </div>
+    <div class="column">
+      <h2>Columna Pequeña</h2>
+      <p>Este es el contenido de la columna pequeña. Puede contener menos elementos que la columna grande.</p>
+    </div>
+  </div>
+</body>
+</html>
