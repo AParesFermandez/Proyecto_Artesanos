@@ -23,7 +23,7 @@ class Usuario:
     def crear_uno(cls, datos):
         tipo_usuario = 1 if datos.get('es_artesano') == 'on' else 2
         query = """
-                INSERT INTO usuarios(nombre, apellido, correo_electronico, password, direccion, ciudad, region, tipo_usuario)
+                INSERT INTO usuarios(nombre, apellido, email, password, direccion, ciudad, region, tipo_usuario)
                 VALUES (%(nombre)s, %(apellido)s, %(email)s, %(password)s, %(direccion)s, %(ciudad)s, %(region)s, %(tipo_usuario)s);
                 """
         datos_usuario = {
