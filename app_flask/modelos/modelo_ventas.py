@@ -24,9 +24,7 @@ class Venta:
     def obtener_todos(cls):
         query = "SELECT * FROM ventas;"
         resultados = connectToMySQL(BASE_DATOS).query_db(query)
-        ventas = []
-        for resultado in resultados:
-            ventas.append(cls(resultado))
+        ventas = [cls(resultado) for resultado in resultados]
         return ventas
 
     @classmethod
@@ -41,11 +39,8 @@ class Venta:
     def obtener_detalles(cls, datos):
         query = "SELECT * FROM detallesventa WHERE id_venta = %(id)s;"
         resultados = connectToMySQL(BASE_DATOS).query_db(query, datos)
-        detalles = []
-        for resultado in resultados:
-            detalles.append(resultado)
+        detalles = [DetallesVenta(resultado) for resultado in resultados]
         return detalles
-
 
     @classmethod
     def actualizar(cls, datos):
@@ -60,3 +55,103 @@ class Venta:
     def eliminar(cls, datos):
         query = "DELETE FROM ventas WHERE id = %(id)s;"
         return connectToMySQL(BASE_DATOS).query_db(query, datos)
+
+
+class DetallesVenta:
+    def __init__(self, datos):
+        self.id = datos['id']
+        self.id_venta = datos['id_venta']
+        self.id_producto = datos['id_producto']
+        self.cantidad = datos['cantidad']
+        self.precio = datos['precio']
+        self.fecha_creacion = datos['fecha_creacion']
+        self.fecha_actualizacion = datos['fecha_actualizacion']
+
+    @classmethod
+    def obtener_por_id(cls, datos):
+        query = "SELECT * FROM detallesventa WHERE id = %(id)s;"
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        if len(resultado) < 1:
+            return False
+        return cls(resultado[0])
+
+class Curso:
+    def __init__(self, datos):
+        self.id = datos['id']
+        self.id_usuario = datos['id_usuario']
+        self.id_comentario = datos['id_comentario']
+        self.titulo = datos['titulo']
+        self.contenido = datos['contenido']
+        self.imagenes = datos['imagenes']
+        self.videos = datos['videos']
+        self.categoria = datos['categoria']
+        self.valoracion = datos['valoracion']
+        self.fecha_creacion = datos['fecha_creacion']
+        self.fecha_actualizacion = datos['fecha_actualizacion']
+
+    @classmethod
+    def obtener_por_id(cls, datos):
+        query = "SELECT * FROM cursos WHERE id = %(id)s;"
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        if len(resultado) < 1:
+            return False
+        return cls(resultado[0])
+
+
+class Tutorial:
+    def __init__(self, datos):
+        self.id = datos['id']
+        self.titulo = datos['titulo']
+        self.contenido = datos['contenido']
+        self.imagenes = datos['imagenes']
+        self.videos = datos['videos']
+        self.fecha_creacion = datos['fecha_creacion']
+        self.fecha_actualizacion = datos['fecha_actualizacion']
+
+    @classmethod
+    def obtener_por_id(cls, datos):
+        query = "SELECT * FROM tutoriales WHERE id = %(id)s;"
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        if len(resultado) < 1:
+            return False
+        return cls(resultado[0])
+
+
+class Mensaje:
+    def __init__(self, datos):
+        self.id = datos['id']
+        self.id_usuario = datos['id_usuario']
+        self.id_artesano = datos['id_artesano']
+        self.mensaje = datos['mensaje']
+        self.imagen_link = datos['imagen_link']
+        self.video_link = datos['video_link']
+        self.fecha_creacion = datos['fecha_creacion']
+        self.fecha_actualizacion = datos['fecha_actualizacion']
+
+    @classmethod
+    def obtener_por_id(cls, datos):
+        query = "SELECT * FROM mensajes WHERE id = %(id)s;"
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        if len(resultado) < 1:
+            return False
+        return cls(resultado[0])
+
+
+class Notificacion:
+    def __init__(self, datos):
+        self.id_notificacion = datos['id_notificacion']
+        self.titulo = datos['titulo']
+        self.contenido = datos['contenido']
+        self.imagenes = datos['imagenes']
+        self.fecha_creacion = datos['fecha_creacion']
+        self.fecha_actualizacion = datos['fecha_actualizacion']
+
+    @classmethod
+    def obtener_por_id(cls, datos):
+        query = "SELECT * FROM noticias WHERE id_noticias = %(id_notificacion)s;"
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        if len(resultado) < 1:
+            return False
+        return cls(resultado[0])
+
+
