@@ -7,6 +7,7 @@ from app_flask import BASE_DATOS, EMAIL_REGEX
 class Usuario:
     def __init__(self, datos):
         self.id = datos['id']
+        self.id_servicio = datos['id_servicio']
         self.nombre = datos['nombre']
         self.apellido = datos['apellido']
         self.email = datos['email']
@@ -14,6 +15,11 @@ class Usuario:
         self.direccion = datos['direccion']
         self.ciudad = datos['ciudad']
         self.region = datos['region']
+        self.tipo_usuario = datos['tipo_usuario']
+        self.artesanias = datos['artesanias']
+        self.celular = datos['celular']
+        self.redes_sociales = datos['redes_sociales']
+        self.pagina_web = datos['pagina_web']
         self.fecha_creacion = datos['fecha_creacion']
         self.fecha_actualizacion = datos['fecha_actualizacion']
 
