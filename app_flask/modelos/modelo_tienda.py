@@ -6,9 +6,25 @@ from app_flask import BASE_DATOS
 class Tienda:
     def __init__(self, datos):
         self.id = datos['id']
+        self.fecha_creacion = datos["fecha_creacion"]
+        self.fecha_actualizacion = datos["fecha_actualizacion"]
     
     def get_id(self):
         return self.id
+    
+class servicios:
+    def __init__(self, datos):
+        self.id = datos['id']
+        self.nombre_servicio = datos['nombre_servicio']
+        self.descripcion = datos['descripcion']
+        self.imagenes = datos['imagenes']
+        self.valoracion = datos['valoracion']
+        self.fecha_creacion = datos["fecha_creacion"]
+        self.fecha_actualizacion = datos["fecha_actualizacion"]
+        
+    def get_id(self):
+        return self.id
+    
 
 
 class productos:
@@ -63,6 +79,18 @@ class comentarios:
 
     def get_id(self):
         return self.id
+    
+    @classmethod
+    def crear_servicio(cls, productos):
+        query = """
+                INSERT INTO productos (id, nombre_servicio, descripcion, imagenes, valoracion) VALUES (%(id)s, %(nombre_servicio)s, %(descripcion)s, %(precio)s); 
+                FROM productos
+                WHERE id = %(productos_id)s;
+                """
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, {'productos': productos})
+        if len(resultado) == 0:
+            return None
+        return cls(resultado[0])
 
     @classmethod
     def crear_producto(cls, productos):
