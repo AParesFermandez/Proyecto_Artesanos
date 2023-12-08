@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Servicio Creado</title>
+</head>
+
+<body>
+
+    <h1>Servicio Creado</h1>
+
+    <div>
+        <h2>Detalles del Servicio</h2>
+        <p>ID del Producto: {{ servicio.id }}</p>
+        <p>Nombre del Servicio: {{ servicio.nombre }}</p>
+        <p>Descripción: {{ servicio.descripcion }}</p>
+        <p>Imágenes:</p>
+        <ul>
+            {% for imagen in servicio.imagenes %}
+            <li><img src="{{ imagen }}" alt="Imagen"></li>
+            {% endfor %}
+        </ul>
+        <p>Valoración: {{ servicio.valoracion }}</p>
+    </div>
+
+</body>
+
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Crear Servicio</title>
+</head>
+
+<body>
+
+    <h1>Crear Servicio</h1>
+
+    <form action="/crear_servicio" method="POST">
+
+        <label for="nombre_servicio">Nombre del Servicio:</label>
+        <input type="text" id="nombre_servicio" name="nombre_servicio" required><br><br>
+
+        <label for="descripcion">Descripción:</label><br>
+        <textarea id="descripcion" name="descripcion" required></textarea><br><br>
+
+        <label for="imagenes">Imágenes (URL separadas por comas):</label>
+        <input type="text" id="imagenes" name="imagenes" required><br><br>
+
+        <label for="valoracion">Valoración:</label>
+        <input type="number" id="valoracion" name="valoracion" min="1" max="5" required><br><br>
+
+        <input type="submit" value="Crear Servicio">
+    </form>
+
+</body>
+
+</html>
