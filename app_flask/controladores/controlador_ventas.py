@@ -1,15 +1,16 @@
-from flask import render_template, redirect, request, flash, session
-from app_flask import app  # Asegúrate de tener la instancia de Flask llamada 'app'
+from flask import render_template, redirect, request, flash, session, url_for
+from app_flask import app
 from app_flask.modelos.modelo_ventas import Venta, DetallesVenta
 
-# Otras importaciones según sea necesario
-
-# Rutas y lógica relacionada con las ventas
 
 @app.route('/ventas')
 def mostrar_ventas():
-    ventas = Venta.obtener_todos()
-    return render_template('ventas.html', ventas=ventas)
+    try:
+        ventas = Venta.obtener_todos()
+        return render_template('ventas.html', ventas=ventas)
+    except Exception as e:
+        flash(f"Error al obtener las ventas: {str(e)}", 'error')
+        return redirect(url_for('pagina_de_error'))
 
 @app.route('/ventas/<int:id_venta>')
 def mostrar_detalles_venta(id_venta):

@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editar Venta</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Editar Venta</h2>
+        <form method="POST" action="/ventas/editar/{{ venta.id }}">
+            <div class="form-group">
+                <label for="id_usuario">ID Usuario:</label>
+                <input type="text" class="form-control" id="id_usuario" name="id_usuario" value="{{ venta.id_usuario }}" required>
+            </div>
+            <div class="form-group">
+                <label for="id_producto">ID Producto:</label>
+                <input type="text" class="form-control" id="id_producto" name="id_producto" value="{{ venta.id_producto }}" required>
+            </div>
+            <div class="form-group">
+                <label for="total">Total:</label>
+                <input type="text" class="form-control" id="total" name="total" value="{{ venta.total }}" required>
+            </div>
+            <div class="form-group">
+                <label for="fecha_creacion">Fecha Creación:</label>
+                <input type="text" class="form-control" id="fecha_creacion" name="fecha_creacion" value="{{ venta.fecha_creacion }}" required>
+            </div>
+            <!-- Agrega más campos según sea necesario -->
+            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+        </form>
+    </div>
+    <!-- Enlace a Bootstrap JS y Popper.js (Necesarios para el funcionamiento de Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

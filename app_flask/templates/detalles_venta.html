@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detalles de Venta</title>
+    <!-- Enlace a Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body>
+    <div class="container mt-5">
+        <h2>Detalles de Venta</h2>
+        <div class="card">
+            <div class="card-body">
+                <h5 class="card-title">ID: {{ venta.id }}</h5>
+                <p class="card-text">ID Usuario: {{ venta.id_usuario }}</p>
+                <p class="card-text">ID Producto: {{ venta.id_producto }}</p>
+                <p class="card-text">Total: {{ venta.total }}</p>
+                <p class="card-text">Fecha Creación: {{ venta.fecha_creacion }}</p>
+                <!-- Agrega más detalles según sea necesario -->
+            </div>
+        </div>
+    </div>
+    <!-- Enlace a Bootstrap JS y Popper.js (Necesarios para el funcionamiento de Bootstrap) -->
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+</body>
+</html>

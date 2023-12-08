@@ -3,7 +3,6 @@ from app_flask.config.mysqlconnection import connectToMySQL
 from flask import flash
 from app_flask import BASE_DATOS, EMAIL_REGEX
 
-
 class Usuario:
     def __init__(self, datos):
         self.id = datos['id']
@@ -23,15 +22,14 @@ class Usuario:
         self.fecha_creacion = datos['fecha_creacion']
         self.fecha_actualizacion = datos['fecha_actualizacion']
 
-#crear un usuario
-
+    # Crear un usuario
     @classmethod
     def crear_uno(cls, datos):
         tipo_usuario = 1 if datos.get('es_artesano') == 'on' else 2
         query = """
-                INSERT INTO usuarios(nombre, apellido, email, password, direccion, ciudad, region, tipo_usuario)
-                VALUES (%(nombre)s, %(apellido)s, %(email)s, %(password)s, %(direccion)s, %(ciudad)s, %(region)s, %(tipo_usuario)s);
-                """
+            INSERT INTO usuarios(nombre, apellido, email, password, direccion, ciudad, region, tipo_usuario, id_servicio)
+            VALUES (%(nombre)s, %(apellido)s, %(email)s, %(password)s, %(direccion)s, %(ciudad)s, %(region)s, %(tipo_usuario)s, %(id_servicio)s);
+        """
         datos_usuario = {
             'nombre': datos['nombre'],
             'apellido': datos['apellido'],
@@ -40,10 +38,10 @@ class Usuario:
             'direccion': datos['direccion'],
             'ciudad': datos['ciudad'],
             'region': datos['region'],
-            'tipo_usuario': tipo_usuario
+            'tipo_usuario': tipo_usuario,
+            'id_servicio': datos.get('id_servicio')  # Puede ser None si no se proporciona
         }
         return connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
-
 
     @staticmethod
     def validar_registro(datos):
