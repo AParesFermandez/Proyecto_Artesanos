@@ -2,6 +2,7 @@
 <html lang="es">
 <head>
     <meta charset="UTF-8">
+<<<<<<< HEAD
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Lista de Ventas</title>
     <!-- Enlace a Bootstrap CSS -->
@@ -43,5 +44,45 @@
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.2/dist/umd/popper.min.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+=======
+    <title>Ventas</title>
+    <!-- Aquí puedes incluir tus hojas de estilo CSS -->
+</head>
+<body>
+    <header>
+        <!-- Aquí puedes incluir tu logotipo y barra de navegación -->
+    </header>
+
+    <main>
+        <h1>Ventas</h1>
+
+        <ul>
+            {% for venta in ventas %}
+                <li>
+                    <h2>Venta {{ venta.id }}</h2>
+                    <p>ID Usuario: {{ venta.id_usuario }}</p>
+                    <p>ID Producto: {{ venta.id_producto }}</p>
+                    <p>Total: {{ venta.total }}</p>
+                    <p>Fecha Creación: {{ venta.fecha_creacion }}</p>
+                    <p>Fecha Actualización: {{ venta.fecha_actualizacion }}</p>
+                    <h3>Detalles de la venta:</h3>
+                    <ul>
+                        {% for detalle in venta.obtener_detalles({'id': venta.id}) %}
+                            <li>
+                                <p>ID Producto: {{ detalle.id_producto }}</p>
+                                <p>Cantidad: {{ detalle.cantidad }}</p>
+                                <p>Precio: {{ detalle.precio }}</p>
+                            </li>
+                        {% endfor %}
+                    </ul>
+                </li>
+            {% endfor %}
+        </ul>
+    </main>
+
+    <footer>
+        <!-- Aquí puedes incluir tu menú, enlaces a redes sociales y formulario de registro al boletín -->
+    </footer>
+>>>>>>> origin/main
 </body>
 </html>

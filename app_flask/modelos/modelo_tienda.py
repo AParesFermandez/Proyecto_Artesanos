@@ -100,6 +100,10 @@ class comentarios:
         if len(resultado) == 0:
             return None
         return cls(resultado[0])
+<<<<<<< HEAD
+=======
+
+>>>>>>> origin/main
     @classmethod
     def crear_comentario(cls, comentario): #creo que falta el inner join con usuarios para que pida tambien el nombre del usuario
         query = """
