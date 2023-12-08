@@ -24,13 +24,11 @@ class Venta:
     def obtener_todos(cls):
         query = "SELECT * FROM ventas;"
         resultados = connectToMySQL(BASE_DATOS).query_db(query)
-<<<<<<< HEAD
         ventas = [cls(resultado) for resultado in resultados]
-=======
+
         ventas = []
         for resultado in resultados:
             ventas.append(cls(resultado))
->>>>>>> origin/main
         return ventas
 
     @classmethod
@@ -45,18 +43,13 @@ class Venta:
     def obtener_detalles(cls, datos):
         query = "SELECT * FROM detallesventa WHERE id_venta = %(id)s;"
         resultados = connectToMySQL(BASE_DATOS).query_db(query, datos)
-<<<<<<< HEAD
         detalles = [DetallesVenta(resultado) for resultado in resultados]
         return detalles
-
-=======
         detalles = []
         for resultado in resultados:
             detalles.append(resultado)
         return detalles
 
-
->>>>>>> origin/main
     @classmethod
     def actualizar(cls, datos):
         query = """
@@ -70,8 +63,6 @@ class Venta:
     def eliminar(cls, datos):
         query = "DELETE FROM ventas WHERE id = %(id)s;"
         return connectToMySQL(BASE_DATOS).query_db(query, datos)
-<<<<<<< HEAD
-
 
 class DetallesVenta:
     def __init__(self, datos):
@@ -169,7 +160,3 @@ class Notificacion:
         if len(resultado) < 1:
             return False
         return cls(resultado[0])
-
-
-=======
->>>>>>> origin/main
