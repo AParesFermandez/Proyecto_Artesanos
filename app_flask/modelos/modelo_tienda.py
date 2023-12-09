@@ -12,8 +12,16 @@ class Tienda:
     def get_id(self):
         return self.id
     
-#class noticias
-    
+#NOTICIAS
+class noticias:
+    def __init__(self, datos):
+        self.id_noticias = datos['id_noticias']
+        self.titulo = datos['titulo']
+        self.contenido = datos['contenido']
+        self.imagenes = datos['imagenes']
+        self.fecha_creacion = datos['fecha_creacion']
+        self.fecha_actualizacion = datos['fecha_actualizacion']
+
 class servicios:
     def __init__(self, datos):
         self.id = datos['id']
