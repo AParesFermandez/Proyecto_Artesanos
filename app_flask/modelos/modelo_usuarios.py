@@ -43,6 +43,14 @@ class Usuario:
             'tipo_usuario': tipo_usuario
         }
         return connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
+    
+    @classmethod
+    def obtener_usuario_por_id(cls, datos):
+        query=  """
+
+                """
+        return connectToMySQL(BASE_DATOS).query_db(query)
+
 
 
     @staticmethod

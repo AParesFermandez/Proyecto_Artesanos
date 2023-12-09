@@ -6,7 +6,7 @@ from app_flask import app
 from app_flask.modelos.modelo_tienda import servicios
 from app_flask.modelos.modelo_usuarios import Usuario
 
-@app.route('/crear_servicio_form', method=['GET'])
+@app.route('/crear_servicio_form', methods=['POST'])
 def crear_servicio_form():
     return render_template('crear_servicios.html')
 
