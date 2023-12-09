@@ -12,6 +12,24 @@ class Tienda:
     def get_id(self):
         return self.id
     
+#NOTICIAS
+class noticias:
+    def __init__(self, datos):
+        self.id_noticias = datos['id_noticias']
+        self.titulo = datos['titulo']
+        self.contenido = datos['contenido']
+        self.imagenes = datos['imagenes']
+        self.fecha_creacion = datos['fecha_creacion']
+        self.fecha_actualizacion = datos['fecha_actualizacion']
+    
+    @classmethod
+    def crear_una(cls, datos):
+        query = """
+                INSERT INTO noticias(titulo, contenido, imagenes, fecha_creacion, fecha_actualizacion)
+                VALUES (%(titulo)s, %(contenido)s, %(imagenes)s, %(fecha_creacion)s, %(fecha_actualizacion)s);
+                """
+        return connectToMySQL(BASE_DATOS).query_db(query, datos)
+
 class servicios:
     def __init__(self, datos):
         self.id = datos['id']

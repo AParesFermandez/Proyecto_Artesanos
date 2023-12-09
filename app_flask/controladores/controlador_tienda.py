@@ -50,3 +50,7 @@ def mostrar_servicio_creado(id_producto):
     return render_template('servicio_creado.html', servicio=servicio_ficticio)
 
 
+#ruta para que muestre la noticia 
+@app.route('/noticias')
+def desplegar_noticia():
+    return render_template('mural-de-noticias.html')
