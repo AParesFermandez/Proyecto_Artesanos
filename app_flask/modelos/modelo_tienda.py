@@ -91,6 +91,8 @@ class comentarios:
         if len(resultado) == 0:
             return None
         return cls(resultado[0])
+    
+    
 
     @classmethod
     def crear_producto(cls, productos):
