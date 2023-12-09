@@ -26,20 +26,17 @@ class Usuario:
 #crear un usuario
 
     @classmethod
-    def crear_uno(cls, datos):
+    def procesa_registro(cls, datos):
         tipo_usuario = 1 if datos.get('es_artesano') == 'on' else 2
         query = """
-                INSERT INTO usuarios(nombre, apellido, email, password, direccion, ciudad, region, tipo_usuario)
-                VALUES (%(nombre)s, %(apellido)s, %(email)s, %(password)s, %(direccion)s, %(ciudad)s, %(region)s, %(tipo_usuario)s);
+                INSERT INTO usuarios(nombre, apellido, email, password, tipo_usuario)
+                VALUES (%(nombre)s, %(apellido)s, %(email)s, %(password)s, %(tipo_usuario)s);
                 """
         datos_usuario = {
             'nombre': datos['nombre'],
             'apellido': datos['apellido'],
             'email': datos['email'],
             'password': datos['password'],
-            'direccion': datos['direccion'],
-            'ciudad': datos['ciudad'],
-            'region': datos['region'],
             'tipo_usuario': tipo_usuario
         }
         return connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
