@@ -8,20 +8,20 @@ bcrypt = Bcrypt(app)
 
 @app.route('/', methods=['GET'])
 def despliega_index():
-    return render_template('index.html')
+    return render_template('login_registro.html')
 
 # redireccion a login
 @app.route('/login', methods=['GET'])
 def despliega_login():
-    return render_template('login.html')
+    return render_template('index.html')
 # redireccion a registro
 @app.route('/registro', methods=['GET'])
 def despliega_registro():
-    return render_template('registro.html')
+    return render_template('index.html')
 # redireccion al home
-@app.route('/home', methods=['GET'])
+@app.route('/index', methods=['GET'])
 def despliega_home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 @app.route('/procesa/registro', methods=['POST'])
@@ -32,9 +32,6 @@ def procesa_registro():
         "email": request.form.get('email', ''),
         "password": request.form.get('password', ''),
         "password_confirmar": request.form.get('password_confirmar', ''),
-        "direccion": request.form.get('direccion', ''),
-        "ciudad": request.form.get('ciudad', ''),
-        "region": request.form.get('region', ''),
         "es_artesano": request.form.get('es_artesano', '')  # Obtener el estado del checkbox
     }
 
@@ -60,7 +57,7 @@ def procesa_registro():
     session['nombre'] = nuevo_usuario['nombre']
     session['apellido'] = nuevo_usuario['apellido']
 
-    return redirect('/home')
+    return redirect('/index')
 
 
 @app.route('/procesa/login', methods=['POST'])
@@ -79,5 +76,5 @@ def procesa_login():
     session['nombre'] = usuario_login.nombre
     session['apellido'] = usuario_login.apellido
 
-    return redirect('/dashboard')
+    return redirect('/index')
 

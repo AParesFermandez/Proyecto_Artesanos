@@ -1,0 +1,104 @@
+body {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+    background-image: url("../img/fondoverde.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.top-header {
+    padding: 10px 0;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    
+}
+
+.top-header .container {
+    display: flex;
+    align-items: center;
+}
+
+.logo img {
+    height: 60px;
+}
+
+.brand h1 {
+    color: #f5f5f5;
+    margin: 0;
+    font-weight: bold;
+
+}
+
+.container {
+    margin-top: 90px;
+}
+
+.row {
+    margin: 0;
+}
+
+.left-container {
+    padding:50px;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.right-container {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    margin-right: 0px;
+}
+
+.title {
+    color: #36bd36; 
+    text-align: left;
+    margin-bottom: 10px; 
+    font-weight: bold;
+}
+
+.form-group {
+    color: #36bd36;
+    opacity: 0.7;
+}
+
+.subtitle {
+    color: #ffffff; 
+    text-align: left; 
+}
+
+.login-form {
+    width: 300px;
+    margin-bottom: 20px;
+    margin-top: 10px;
+}
+
+.registration-form {
+    width: 300px;
+    margin-bottom: 20px;
+}
+
+.registration-form h1,
+.login-form h1 {
+    color: #c47b28; 
+    font-weight: bold;
+
+}
+
+.text-light {
+    color: #ffffff; 
+}
+
+.btn-primary,
+.btn-success {
+    width: 100%;
+}
+
+.btn-primary {
+    margin-bottom: 100px;
+}
