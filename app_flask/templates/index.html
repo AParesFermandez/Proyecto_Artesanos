@@ -28,7 +28,9 @@
       </div>
       <div class="frame">
         <div class="vector-wrapper">
-          <img class="vector-icon" alt="" src="./static/img/vector1.svg" />
+          <a href="#">
+          <img class="vector-icon" alt="" src="./static/img/vector1.svg"/>
+          </a>
         </div>
       </div>
       <div class="frame1">
@@ -230,7 +232,7 @@
         alt=""
         src="./static/img/captura-de-pantalla-20231126-a-las-2135-2@2x.png"/>
       <div class="que-opinan-los-clientes-wrapper">
-        <div class="magia-hecha-a">Que opinan los clientes</div>
+        <div class="magia-hecha-a" id="framecontainer77">Que opinan los clientes</div>
       </div>
       <div class="frame-parent16">
         <div class="frame-wrapper">
@@ -479,7 +481,7 @@
           <div class="line-div"></div>
         </div>
       </div>
-      <div class="frame-parent38">
+      <div class="frame-parent38" id="frameContainer117">
         <div class="sobre-nosotros-parent">
           <div class="sobre-nosotros2">Sobre nosotros</div>
           <i class="nuestra-misin-es1"
@@ -491,47 +493,39 @@
             prosperar..</i
           >
         </div>
-        <div class="saber-mas-wrapper" id="frameContainer117">
+        <div class="saber-mas-wrapper">
           <div class="enviar">Saber mas</div>
         </div>
       </div>
     </div>
 
     <script>
-      var frameContainer8 = document.getElementById("frameContainer8");
-      if (frameContainer8) {
-        frameContainer8.addEventListener("click", function (e) {
-          // Please sync "feed artesanos" to the project
-        });
+      // scripts amanda
+      //esta es la funcion para hacer scroll uvu 
+      function scrollToSection(sectionId) {
+        const section = document.getElementById(sectionId);
+        if (section) {
+          section.scrollIntoView({ behavior: 'smooth' });
+        }
       }
-      
-      var frameContainer54 = document.getElementById("frameContainer54");
-      if (frameContainer54) {
-        frameContainer54.addEventListener("click", function (e) {
-          // Please sync "feed artesanos" to the project
-        });
-      }
-      
-      var comunidadText1 = document.getElementById("comunidadText1");
-      if (comunidadText1) {
-        comunidadText1.addEventListener("click", function (e) {
-          // Please sync "Mural de noticias" to the project
-        });
-      }
-      
-      var frameContainer112 = document.getElementById("frameContainer112");
-      if (frameContainer112) {
-        frameContainer112.addEventListener("click", function (e) {
-          // Please sync "feed artesanos" to the project
-        });
-      }
-      
-      var frameContainer117 = document.getElementById("frameContainer117");
-      if (frameContainer117) {
-        frameContainer117.addEventListener("click", function (e) {
-          // Please sync "feed artesanos" to the project
-        });
-      }
+
+      // aqui se obtienen los elementos de arriba el inicio el sobre nosotros y comunidad 
+      const inicioElement = document.querySelector('.inicio-wrapper:nth-child(1)');
+      const sobreElement = document.querySelector('.inicio-wrapper:nth-child(2)');
+      const comunidadElement = document.querySelector('.inicio-wrapper:nth-child(3)');
+
+      //  estas son las funciones que llaman a la funcion de arriba para hacer scroll hasta el apartado
+      inicioElement.addEventListener('click', function () {
+        scrollToSection('frameContainer54'); // donde dice 'inicio-section' va el id de la seccion
+      });
+
+      sobreElement.addEventListener('click', function () {
+        scrollToSection('frameContainer117'); //aqui o mismo va la seccion del sobre nosotros
+      });
+
+      comunidadElement.addEventListener('click', function () {
+        scrollToSection('framecontainer77'); // lo mismo x2 jaksjdasd
+      });
       </script>
   </body>
 </html>

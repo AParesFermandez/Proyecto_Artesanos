@@ -10,6 +10,10 @@ from app_flask.modelos.modelo_usuarios import Usuario
 def detalles_vendedor():
     return render_template('oficial.html')
 
+@app.route('/tienda')
+def desplegar_tienda():
+    return render_template('tienda.html')
+
 @app.route('/crear_servicio_form', methods=['POST'])
 def crear_servicio_form():
     return render_template('crear_servicios.html')
@@ -48,5 +52,10 @@ def mostrar_servicio_creado(id_producto):
 
 
     return render_template('servicio_creado.html', servicio=servicio_ficticio)
+
+#ruta para que muestre la noticia 
+@app.route('/noticias')
+def desplegar_noticia():
+    return render_template('mural-de-noticias.html')
 
 
