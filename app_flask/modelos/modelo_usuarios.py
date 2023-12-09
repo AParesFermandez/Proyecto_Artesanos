@@ -11,7 +11,7 @@ class Usuario:
         self.nombre = datos['nombre']
         self.apellido = datos['apellido']
         self.email = datos['email']
-        self.contraseña = datos['password']
+        self.password = datos['password']
         self.direccion = datos['direccion']
         self.ciudad = datos['ciudad']
         self.region = datos['region']
@@ -59,7 +59,21 @@ class Usuario:
                 """
         return connectToMySQL(BASE_DATOS).query_db(query)
 
-
+    @classmethod
+    def obtener_uno(cls,):
+        return
+    
+    @classmethod
+    def obtener_uno_por_email(cls, email):
+        query = "SELECT * FROM usuarios WHERE email = %(email)s;"
+        data = { 'email': email }
+        result = connectToMySQL(BASE_DATOS).query_db(query, data)
+        
+        # Verificar si se encontró algún usuario con ese correo electrónico
+        if len(result) > 0:
+            return cls(result[0])  # Crear una instancia de Usuario con los datos obtenidos de la consulta
+        else:
+            return None
 
     @staticmethod
     def validar_registro(datos):
