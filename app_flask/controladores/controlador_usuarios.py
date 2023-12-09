@@ -8,7 +8,7 @@ bcrypt = Bcrypt(app)
 
 @app.route('/', methods=['GET'])
 def despliega_index():
-    return render_template('index.html')
+    return render_template('login_registro.html')
 
 # redireccion a login
 @app.route('/login', methods=['GET'])
@@ -19,9 +19,9 @@ def despliega_login():
 def despliega_registro():
     return render_template('index.html')
 # redireccion al home
-@app.route('/home', methods=['GET'])
+@app.route('/index', methods=['GET'])
 def despliega_home():
-    return render_template('home.html')
+    return render_template('index.html')
 
 
 @app.route('/procesa/registro', methods=['POST'])
@@ -57,7 +57,7 @@ def procesa_registro():
     session['nombre'] = nuevo_usuario['nombre']
     session['apellido'] = nuevo_usuario['apellido']
 
-    return redirect('/index.html')
+    return redirect('/index')
 
 
 @app.route('/procesa/login', methods=['POST'])
@@ -76,5 +76,5 @@ def procesa_login():
     session['nombre'] = usuario_login.nombre
     session['apellido'] = usuario_login.apellido
 
-    return redirect('/index.html')
+    return redirect('/index')
 

@@ -26,7 +26,7 @@ class Usuario:
 #crear un usuario
 
     @classmethod
-    def procesa_registro(cls, datos):
+    def crear_uno(cls, datos):
         tipo_usuario = 1 if datos.get('es_artesano') == 'on' else 2
         query = """
                 INSERT INTO usuarios(nombre, apellido, email, password, tipo_usuario)
@@ -39,8 +39,19 @@ class Usuario:
             'password': datos['password'],
             'tipo_usuario': tipo_usuario
         }
-        return connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
-    
+
+        print("Antes del try-except")  # Impresión de prueba
+
+        try:
+            resultado = connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
+            return resultado  # Podrías retornar algo para identificar que la consulta se realizó correctamente
+        except Exception as e:
+            print("Error al insertar usuario:", e)  # Imprimir el mensaje de error para conocer la excepción
+            print("Datos de usuario:", datos_usuario)  # También puedes imprimir los datos que se intentaron insertar
+            raise  # Re-raise the exception to get the traceback information
+
+        print("Después del try-except")  # Impresión de prueba
+
     @classmethod
     def obtener_usuario_por_id(cls, datos):
         query=  """
