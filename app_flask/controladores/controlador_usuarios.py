@@ -62,7 +62,7 @@ def procesa_registro():
 
 @app.route('/procesa/login', methods=['POST'])
 def procesa_login():
-    usuario_login = Usuario.obtener_uno({"email": request.form.get('email', '')})
+    usuario_login = Usuario.obtener_uno_por_email(request.form.get('email', ''))
 
     if usuario_login is None:
         flash('Este correo no existe', 'error_login')
@@ -77,4 +77,3 @@ def procesa_login():
     session['apellido'] = usuario_login.apellido
 
     return redirect('/index')
-
