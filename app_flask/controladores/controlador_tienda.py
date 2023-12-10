@@ -6,6 +6,11 @@ from app_flask import app
 from app_flask.modelos.modelo_tienda import servicios
 from app_flask.modelos.modelo_usuarios import Usuario
 
+#render_templates rutas mati
+@app.route('/')
+def index():
+    return render_template('index.html')
+
 @app.route('/oficial')
 def detalles_vendedor():
     return render_template('oficial.html')
@@ -13,6 +18,23 @@ def detalles_vendedor():
 @app.route('/tienda')
 def desplegar_tienda():
     return render_template('tienda.html')
+
+@app.route('/sobrenosotros')
+def sobrenosotros():
+    return render_template('sobrenosotros.html')
+
+@app.route('/publicar')
+def publicar():
+    return render_template('publicar.html')
+
+#ruta para que muestre mural noticias
+@app.route('/noticias')
+def desplegar_noticia():
+    return render_template('mural-de-noticias.html')
+
+#aca terminan las rutas del mati quedaron excelente 
+
+
 
 @app.route('/crear_servicio_form', methods=['POST'])
 def crear_servicio_form():
@@ -53,9 +75,5 @@ def mostrar_servicio_creado(id_producto):
 
     return render_template('servicio_creado.html', servicio=servicio_ficticio)
 
-#ruta para que muestre la noticia 
-@app.route('/noticias')
-def desplegar_noticia():
-    return render_template('mural-de-noticias.html')
 
 
