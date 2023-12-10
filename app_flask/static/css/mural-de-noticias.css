@@ -1,14 +1,14 @@
-.imagen3-2-icon3 {
+.logomuraldenoticias-icon {
   position: relative;
   width: 74px;
   height: 75px;
   object-fit: cover;
 }
-.magia-hecha-a3 {
+.magia-hecha-a1 {
   position: relative;
   font-weight: 600;
 }
-.imagen3-2-parent1 {
+.logoynombremuraldenoticias {
   position: absolute;
   top: 34px;
   left: 24px;
@@ -18,23 +18,21 @@
   justify-content: flex-start;
   color: var(--color-orange);
 }
-.vector-icon31 {
+.loginmuraldenoticias-icon {
   position: relative;
   width: 20px;
   height: 21.1px;
+  cursor: pointer;
 }
-.vector-wrapper1 {
+.frame28,
+.loginmuraldenoticias-wrapper {
+  display: flex;
   flex-direction: row;
+  align-items: center;
   justify-content: center;
   padding: var(--padding-base) var(--padding-5xl);
 }
-.frame16,
-.inicio-wrapper1,
-.vector-wrapper1 {
-  display: flex;
-  align-items: center;
-}
-.frame16 {
+.frame28 {
   position: absolute;
   top: 34px;
   right: 24px;
@@ -46,32 +44,30 @@
   padding: 0.000003814697265625px var(--padding-0);
   box-sizing: border-box;
 }
-.inicio-wrapper1 {
-  flex-direction: row;
-  justify-content: center;
-  padding: var(--padding-base);
-  cursor: pointer;
-}
-.sobre-nosotros9 {
+.inicio2 {
   position: relative;
-  font-weight: 600;
+  font-weight: 500;
   cursor: pointer;
 }
-.menu-item3,
-.sobre-nosotros-wrapper1 {
+.inicionoticias {
   display: flex;
   flex-direction: row;
-  justify-content: center;
-}
-.sobre-nosotros-wrapper1 {
   align-items: center;
+  justify-content: center;
   padding: var(--padding-base);
 }
-.menu-item3 {
+.inicio1,
+.menuitemnoticias {
+  display: flex;
+  flex-direction: column;
   align-items: flex-start;
+  justify-content: center;
+}
+.menuitemnoticias {
+  flex-direction: row;
   gap: var(--gap-31xl);
 }
-.frame17 {
+.opcionesmenunoticias {
   position: absolute;
   top: 34px;
   left: calc(50% - 245.5px);
@@ -82,6 +78,7 @@
   flex-direction: column;
   align-items: center;
   justify-content: flex-end;
+  font-size: var(--button-1-size);
 }
 .mural-de-noticias1 {
   position: relative;
@@ -93,7 +90,7 @@
   font-size: var(--sub-heading-1-size);
   letter-spacing: -0.01em;
   font-weight: 300;
-  color: var(--color-gray-100);
+  color: var(--color-gray-200);
 }
 .mural-de-noticias-parent {
   display: flex;
@@ -113,7 +110,7 @@
   justify-content: center;
   font-size: var(--heading-2-size);
 }
-.images-1-icon1 {
+.fotodeperfil1-icon {
   position: absolute;
   top: 0;
   left: 0;
@@ -121,7 +118,7 @@
   height: 61px;
   object-fit: cover;
 }
-.images-1-container {
+.fotodeperfil1-wrapper {
   position: relative;
   border-radius: var(--br-6xl);
   background-color: var(--color-white);
@@ -130,36 +127,28 @@
   overflow: hidden;
   flex-shrink: 0;
 }
-.miguel-zapata1,
 .proxima-feria-artesanal {
   position: relative;
   letter-spacing: -1px;
   font-weight: 600;
-}
-.miguel-zapata1 {
-  font-size: var(--sub-heading-2-size);
-  letter-spacing: -0.01em;
-  line-height: 24px;
-  font-weight: 300;
-  color: var(--color-gray-100);
 }
 .proxima-feria-artesanal-parent {
   flex-direction: column;
   align-items: flex-start;
   gap: var(--gap-sm);
 }
-.frame-parent130,
-.frame-wrapper36,
+.frame-parent43,
+.frame-wrapper14,
 .proxima-feria-artesanal-parent {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent130 {
+.frame-parent43 {
   flex-direction: row;
   align-items: center;
   gap: var(--gap-16xl);
 }
-.frame-wrapper36 {
+.frame-wrapper14 {
   width: 503px;
   flex-direction: column;
   align-items: flex-start;
@@ -181,7 +170,7 @@
   overflow: hidden;
   flex-shrink: 0;
 }
-.frame-parent129 {
+.frame-parent42 {
   height: 397px;
   display: flex;
   flex-direction: column;
@@ -189,17 +178,17 @@
   justify-content: flex-start;
   gap: var(--gap-xl);
 }
-.vector-icon32 {
+.vector-icon28 {
   position: relative;
   width: 21px;
   height: 19.8px;
 }
-.div4 {
+.div5 {
   position: relative;
   letter-spacing: -1px;
   font-weight: 500;
 }
-.vector-parent11 {
+.vector-parent {
   width: 49px;
   display: flex;
   flex-direction: row;
@@ -207,7 +196,7 @@
   justify-content: flex-start;
   gap: var(--gap-3xs);
 }
-.marcador-de-posicion-1-icon32 {
+.marcador-de-posicion-1-icon13 {
   position: relative;
   width: 23px;
   height: 23px;
@@ -218,32 +207,32 @@
   letter-spacing: -0.01em;
   font-weight: 500;
 }
-.marcador-de-posicion-1-parent30 {
+.marcador-de-posicion-1-parent11 {
   display: flex;
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
   gap: var(--gap-3xs);
 }
-.frame-wrapper37 {
+.ubicacionylike1-inner {
   flex-direction: row;
   align-items: center;
   font-size: var(--sub-heading-2-size);
   color: var(--color-darkgreen);
 }
-.frame-parent128,
-.frame-parent131,
-.frame-wrapper37 {
+.frame-parent41,
+.ubicacionylike1,
+.ubicacionylike1-inner {
   display: flex;
   justify-content: flex-start;
 }
-.frame-parent131 {
+.ubicacionylike1 {
   flex-direction: row;
   align-items: center;
   gap: var(--gap-6xl);
   font-size: var(--button-1-size);
 }
-.frame-parent128 {
+.frame-parent41 {
   height: 471px;
   flex-direction: column;
   align-items: flex-start;
@@ -266,8 +255,8 @@
   width: 510px;
 }
 .emprendedoras-puconinas-formar-wrapper,
-.frame-parent127,
-.frame-parent132 {
+.frame-parent44,
+.publicacionnoticia1 {
   display: flex;
   flex-direction: column;
   align-items: flex-start;
@@ -276,12 +265,12 @@
 .emprendedoras-puconinas-formar-wrapper {
   font-size: var(--sub-heading-2-size);
 }
-.frame-parent127,
-.frame-parent132 {
+.frame-parent44,
+.publicacionnoticia1 {
   height: 471px;
   gap: var(--gap-8xl);
 }
-.frame-parent127 {
+.publicacionnoticia1 {
   position: absolute;
   height: 27.94%;
   width: calc(100% - 121px);
@@ -297,7 +286,15 @@
   box-sizing: border-box;
   gap: var(--gap-34xl);
 }
-.image-10-icon1 {
+.rodrigo-caamao {
+  position: relative;
+  font-size: var(--sub-heading-2-size);
+  letter-spacing: -0.01em;
+  line-height: 24px;
+  font-weight: 300;
+  color: var(--color-gray-200);
+}
+.image-10-icon {
   position: absolute;
   bottom: -345px;
   left: 0;
@@ -305,7 +302,7 @@
   height: 652px;
   object-fit: cover;
 }
-.esfera-28-1-icon3,
+.esfera-28-1-icon,
 .feria-artesanal-2-1-icon {
   position: absolute;
   top: 0;
@@ -330,8 +327,8 @@
   height: 307px;
   overflow: hidden;
 }
-.frame-parent133,
-.frame-parent138 {
+.frame-parent48,
+.publicacionnoticia2 {
   height: 467px;
   display: flex;
   flex-direction: column;
@@ -339,7 +336,7 @@
   justify-content: flex-start;
   gap: var(--gap-8xl);
 }
-.frame-parent133 {
+.publicacionnoticia2 {
   position: absolute;
   height: 27.94%;
   width: calc(100% - 121px);
@@ -364,5 +361,5 @@
   text-align: left;
   font-size: var(--sub-heading-1-size);
   color: var(--color-black);
-  font-family: var(--button-1);
+  font-family: var(--heading-3);
 }
