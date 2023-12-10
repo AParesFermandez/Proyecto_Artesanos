@@ -4,8 +4,8 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="./global.css" />
-    <link rel="stylesheet" href="./mural-de-noticias.css" />
+    <link rel="stylesheet" href="./static/css/global.css" />
+    <link rel="stylesheet" href="./static/css/mural-de-noticias.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
@@ -21,7 +21,7 @@
         <img
           class="logomuraldenoticias-icon"
           alt=""
-          src="./public/logotienda@2x.png"
+          src="./static/img/logotienda@2x.png"
         />
 
         <div class="magia-hecha-a1">PasiónArtesana</div>
@@ -31,7 +31,7 @@
           <img
             class="loginmuraldenoticias-icon"
             alt=""
-            src="./public/logintienda.svg"
+            src="./static/img/logintienda.svg"
             id="loginmuraldenoticiasIcon"
           />
         </div>
@@ -67,7 +67,7 @@
                   <img
                     class="fotodeperfil1-icon"
                     alt=""
-                    src="./public/fotoperfilresea2@2x.png"
+                    src="./static/img/fotoperfilresea2@2x.png"
                   />
                 </div>
                 <div class="proxima-feria-artesanal-parent">
@@ -82,13 +82,13 @@
               <img
                 class="feria-artesanal-carhuello-1-icon"
                 alt=""
-                src="./public/feriaartesanalcarhuello-1@2x.png"
+                src="./static/img/feriaartesanalcarhuello-1@2x.png"
               />
             </div>
           </div>
           <div class="ubicacionylike1">
             <div class="vector-parent">
-              <img class="vector-icon28" alt="" src="./public/vector7.svg" />
+              <img class="vector-icon28" alt="" src="./static/img/vector7.svg" />
 
               <div class="div5">2</div>
             </div>
@@ -97,7 +97,7 @@
                 <img
                   class="marcador-de-posicion-1-icon13"
                   alt=""
-                  src="./public/image@2x.png"
+                  src="./static/img/image@2x.png"
                 />
 
                 <div class="pucon">Pucon</div>
@@ -147,7 +147,7 @@
                   <img
                     class="fotodeperfil1-icon"
                     alt=""
-                    src="./public/fotoperfilresea2@2x.png"
+                    src="./static/img/fotoperfilresea2@2x.png"
                   />
                 </div>
                 <div class="proxima-feria-artesanal-parent">
@@ -162,33 +162,33 @@
               <img
                 class="image-10-icon"
                 alt=""
-                src="./public/image-10@2x.png"
+                src="./static/img/image-10@2x.png"
               />
 
               <img
                 class="esfera-28-1-icon"
                 alt=""
-                src="./public/pesebretienda@2x.png"
+                src="./static/img/pesebretienda@2x.png"
               />
 
               <img
                 class="feria-artesanal-carhuello-1-icon"
                 alt=""
-                src="./public/feriaartesanalcarhuello-1@2x.png"
+                src="./static/img/feriaartesanalcarhuello-1@2x.png"
               />
 
               <div class="feria-artesanal-2-1-wrapper">
                 <img
                   class="feria-artesanal-2-1-icon"
                   alt=""
-                  src="./public/feriaartesanal2-1@2x.png"
+                  src="./static/img/feriaartesanal2-1@2x.png"
                 />
               </div>
             </div>
           </div>
           <div class="ubicacionylike1">
             <div class="vector-parent">
-              <img class="vector-icon28" alt="" src="./public/vector7.svg" />
+              <img class="vector-icon28" alt="" src="./static/img/vector7.svg" />
 
               <div class="div5">2</div>
             </div>
@@ -197,7 +197,7 @@
                 <img
                   class="marcador-de-posicion-1-icon13"
                   alt=""
-                  src="./public/image@2x.png"
+                  src="./static/img/image@2x.png"
                 />
 
                 <div class="pucon">Concepcion</div>
@@ -250,21 +250,21 @@
       );
       if (loginmuraldenoticiasIcon) {
         loginmuraldenoticiasIcon.addEventListener("click", function (e) {
-          window.location.href = "./login-registro.html";
+          window.location.href = "/perfil";
         });
       }
       
       var inicioText = document.getElementById("inicioText");
       if (inicioText) {
         inicioText.addEventListener("click", function (e) {
-          window.location.href = "./index.html";
+          window.location.href = "/login";
         });
       }
       
       var publicarText = document.getElementById("publicarText");
       if (publicarText) {
         publicarText.addEventListener("click", function (e) {
-          window.location.href = "./publicar.html";
+          window.location.href = "/publicar";
         });
       }
       </script>
