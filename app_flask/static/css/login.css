@@ -2,7 +2,7 @@ body {
     margin: 0;
     padding: 0;
     font-family: Arial, sans-serif;
-    background-image: url("../img/fondoverde.jpg");
+    background-image: url("/static/img/fondoverde.jpg");
     background-size: cover;
     background-repeat: no-repeat;
     background-position: center;
@@ -92,6 +92,11 @@ body {
 
 .text-light {
     color: #ffffff; 
+}
+
+.form-check-label {
+    color: #ffffff;
+
 }
 
 .btn-primary,
