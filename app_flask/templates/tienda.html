@@ -466,10 +466,11 @@
       });
     }
 
+    //este es el de enviar correo
     var frameContainer15 = document.getElementById("frameContainer15");
     if (frameContainer15) {
       frameContainer15.addEventListener("click", function (e) {
-        // Please sync "feed artesanos" to the project
+        window.location.href = "/sobrenosotros"
       });
     }
 
@@ -486,11 +487,11 @@
         window.location.href = "/noticias";
       });
     }
-
-    var frameContainer27 = document.getElementById("frameContainer27");
-    if (frameContainer27) {
-      frameContainer27.addEventListener("click", function (e) {
-        // Please sync "feed artesanos" to the project
+    //no funciona el sobre nosotros hay que arreglarlo
+    var sobreNosotrosText1 = document.getElementById("frameContainer27");
+    if (sobreNosotrosText1) {
+      sobreNosotrosText1.addEventListener("click", function (e) {
+        window.location.href = "/sobrenosotros"
       });
     }
   </script>
