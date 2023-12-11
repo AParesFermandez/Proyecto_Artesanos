@@ -6,6 +6,10 @@ from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt(app)
 
+#redireccion perfil
+@app.route('/perfil')
+def despliega_perfil():
+    return render_template('perfil.html')
 
 # redireccion a login
 @app.route('/login', methods=['GET'])

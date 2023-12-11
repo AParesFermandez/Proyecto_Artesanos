@@ -84,7 +84,7 @@
         <div class="magia-hecha-a">Ingresa tu correo para mas infomacion:</div>
         <div class="frame-group">
           <div class="ingresa-tu-imail-aqui-parent">
-            <div class="home">Ingresa tu imail aqui...</div>
+            <div class="home">Ingresa tu email aqui...</div>
             <div class="enviar-wrapper">
               <div class="enviar">Enviar</div>
             </div>
@@ -98,7 +98,7 @@
           <div class="frame1">
             <div class="inicio" id="homeText1">Home</div>
             <div class="inicio" id="comunidadText2">Comunidad</div>
-            <div class="inicio" id="sobreNosotrosText1">Sobre nosotros</div>
+            <div class="sobreNosotrosText1" id="sobreNosotrosText1">Sobre nosotros</div>
             <div class="inicio" id="publicarText1">Publicar</div>
           </div>
         </div>
@@ -125,7 +125,7 @@
         <div class="magia-hecha-a">Ingresa tu correo para mas infomacion:</div>
         <div class="frame-group">
           <div class="ingresa-tu-imail-aqui-parent">
-            <div class="home">Ingresa tu imail aqui...</div>
+            <div class="home">Ingresa tu email aqui...</div>
             <div class="enviar-wrapper">
               <div class="enviar">Enviar</div>
             </div>
@@ -482,24 +482,11 @@
     </div>
 
     <script>
-      //arreglar esta parte
-      var saberMasText = document.getElementById("saberMasText");
-      if (saberMasText) {
-        saberMasText.addEventListener("click", function (e) {
-          window.location.href = "/sobrenosotros";
-        });
-      }
-      
-      var exploraLaTienda = document.getElementById("exploraLaTienda");
-      if (exploraLaTienda) {
-        exploraLaTienda.addEventListener("click", function (e) {
-          window.location.href = "/tienda";
-        });
-      }
-      //listo
-      var logintiendaservicioIcon = document.getElementById("logintiendaservicioIcon");
-      if (logintiendaservicioIcon) {
-        logintiendaservicioIcon.addEventListener("click", function (e) {
+      //barra navegacion
+
+      var inicioText = document.getElementById("inicioText");
+      if (inicioText) {
+        inicioText.addEventListener("click", function (e) {
           window.location.href = "/login";
         });
       }
@@ -517,18 +504,26 @@
           window.location.href = "/noticias";
         });
       }
-      
-      var comunidadText1 = document.getElementById("comunidadText1");
-      if (comunidadText1) {
-        comunidadText1.addEventListener("click", function (e) {
-          window.location.href = "/noticias";
+
+      var logintiendaservicioIcon = document.getElementById("logintiendaservicioIcon");
+      if (logintiendaservicioIcon) {
+        logintiendaservicioIcon.addEventListener("click", function (e) {
+          window.location.href = "/login";
+        });
+      }
+
+      //menu de abajito
+      var homeText1 = document.getElementById("homeText1");
+      if (homeText1) {
+        homeText1.addEventListener("click", function (e) {
+          window.location.href = "/index";
         });
       }
       
-      var sobreNosotrosText1 = document.getElementById("sobreNosotrosText1");
-      if (sobreNosotrosText1) {
-        sobreNosotrosText1.addEventListener("click", function (e) {
-          window.location.href = "/sobrenosotros";
+      var comunidadText2 = document.getElementById("comunidadText2");
+      if (comunidadText2) {
+        comunidadText2.addEventListener("click", function (e) {
+          window.location.href = "/noticias";
         });
       }
       
@@ -538,11 +533,11 @@
           window.location.href = "/publicar";
         });
       }
-      
-      var productosText = document.getElementById("productosText");
-      if (productosText) {
-        productosText.addEventListener("click", function (e) {
-          window.location.href = "/tienda";
+
+      var sobreNosotrosText1 = document.getElementById("sobreNosotrosText1");
+      if (sobreNosotrosText1) {
+        sobreNosotrosText1.addEventListener("click", function (e) {
+          window.location.href = "/sobrenosotros";
         });
       }
 
@@ -550,20 +545,6 @@
       if (serviciosText) {
         serviciosText.addEventListener("click", function (e) {
           window.location.href = "/servicios";
-        });
-      }
-      
-      var verTodoText = document.getElementById("verTodoText");
-      if (verTodoText) {
-        verTodoText.addEventListener("click", function (e) {
-          window.location.href = "/tienda";
-        });
-      }
-
-      var inicioText= document.getElementById("inicioText");
-      if (inicioText) {
-        inicioText.addEventListener("click", function (e) {
-          window.location.href = "/index";
         });
       }
       </script>

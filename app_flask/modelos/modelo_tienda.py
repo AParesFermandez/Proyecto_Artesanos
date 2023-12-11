@@ -90,6 +90,7 @@ class comentarios:
     def get_id(self):
         return self.id
     
+    
     @classmethod
     def crear_servicio(cls, productos):
         query = """
@@ -107,9 +108,10 @@ class comentarios:
     @classmethod
     def crear_producto(cls, productos):
         query = """
-                INSERT INTO productos (id, nombre, descripcion, precio) VALUES (%(id)s, %(nombre)s, %(descripcion)s, %(precio)s); 
-                FROM productos
-                WHERE id = %(productos_id)s;
+                INSERT productos (id, nombre, descripcion, imagen) VALUES (%(id)s, %(nombre)s, %(descripcion)s, %(imagen)s); 
+                JOIN usuarios (nombre)
+                SET t1.columna1 = valor_nuevo1,
+                t2.columna2 = valor_nuevo2
                 """
         resultado = connectToMySQL(BASE_DATOS).query_db(query, {'productos': productos})
         if len(resultado) == 0:

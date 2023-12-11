@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Registro de Producto o Servicio</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
-    <link rel="stylesheet" href="/static/css/publicar.css">
+    <link rel="stylesheet" href="/static/css/perfil.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" integrity="sha384-wjFpIQxRlMZ5L2kr9LweU/XdIO2uAYqAbVFV3NOBBi1zZp3Nw1s38BByJHlU0NOg" crossorigin="anonymous">
 </head>
 <body>
@@ -24,31 +24,27 @@
         <div class="row">
             <div class="col-lg-6">
                 <div class="left-container">
-                    <h1 class="title">Subir Imagen</h1>
+                    <h1 class="title">Foto de Perfil</h1>
                     <form method="POST" action="/procesa/subir-imagen" enctype="multipart/form-data">
                         <label for="imagen" class="upload-icon">
                             <img id="previewImage" src="/static/img/lana.jpeg" alt="Subir Imagen">
                         </label>
                         <input type="file" id="imagen" name="imagen" accept="image/*" class="form-control" style="display: none;">
-                        <button class="btn btn-success" style="margin-top: 10px;">Subir</button>
+                        <button class="btn btn-success" style="margin-top: 10px;">Editar foto de Perfil</button>
                     </form>
                 </div>
             </div>
             <div class="col-lg-6">
                 <div class="right-container">
-                    <h1 class="title">¡Comparte tu Producto o Servicio!</h1>
-                    <form method="POST" action="/procesa/registro">
+                    <h1 class="title">Datos Personales</h1>
+                    <form method="POST" action="/editar_usuario">
                         <div class="form-group">
-                            <label for="nombreProducto">Nombre del Producto o Servicio:</label>
-                            <input type="text" id="nombreProducto" name="nombreProducto" class="form-control" placeholder="Nombre de tu producto o servicio">
+                            <label for="nombreProducto">Nombre de Usuario</label>
+                            <input type="text" id="nombreProducto" name="nombreProducto" class="form-control" placeholder="Edita tu nombre de usuario">
                         </div>
                         <div class="form-group">
                             <label for="ubicacion">Ubicación:</label>
-                            <input type="text" id="ubicacion" name="ubicacion" class="form-control" placeholder="Lugar donde vendes tu producto/servicio">
-                        </div>
-                        <div class="form-group">
-                            <label for="descripcion">Descripción:</label>
-                            <textarea id="descripcion" name="descripcion" class="form-control" placeholder="Agrega una descripción a tu producto o servicio"></textarea>
+                            <input type="text" id="ubicacion" name="ubicacion" class="form-control" placeholder="Tu ubiación">
                         </div>
                         <div class="form-group">
                             <label for="numeroContacto">Número de Contacto:</label>
@@ -58,21 +54,6 @@
                             <label for="correo">Correo:</label>
                             <input type="text" id="correo" name="correo" class="form-control" placeholder="Correo">
                         </div>
-                        <div class="form-group">
-                            <label>Redes Sociales(opcional):</label>
-                            <div class="social-inputs">
-                                <div class="social-input">
-                                    <i class="fab fa-facebook-f"></i>
-                                    <input type="text" name="facebook" placeholder="Facebook">
-                                </div>
-                                <div class="social-input">
-                                    <i class="fab fa-twitter"></i>
-                                    <input type="text" name="twitter" placeholder="Twitter">
-                                </div>
-                                <div class="social-input">
-                                    <i class="fab fa-instagram"></i>
-                                    <input type="text" name="instagram" placeholder="Instagram">
-                                </div>
                                 <button class="btn btn-success" style="margin-top: 10px;">Enviar</button>
                             </form>
                         </div>

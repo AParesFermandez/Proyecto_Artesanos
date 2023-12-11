@@ -23,6 +23,9 @@ class Usuario:
         self.fecha_creacion = datos['fecha_creacion']
         self.fecha_actualizacion = datos['fecha_actualizacion']
 
+    def full_name(self):
+        return f"{self.nombre} {self.apellido}"
+
 #crear un usuario
 
     @classmethod
@@ -51,6 +54,15 @@ class Usuario:
             raise  # Re-raise the exception to get the traceback information
 
         print("Después del try-except")  # Impresión de prueba
+
+    @classmethod
+    def editar_usuario(cls):
+        query=  """
+                UPDATED FROM usuarios(nombre, apellido, region, celular, email)
+                VALUES (%(nombre)s, %(apellido)s, %(region)s, %(celular)s, %(email)s);
+                """
+        return connectToMySQL(BASE_DATOS).query_db(query)
+
 
     @classmethod
     def obtener_usuario_por_id(cls, datos):
