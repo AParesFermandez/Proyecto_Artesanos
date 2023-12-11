@@ -15,9 +15,10 @@
   height: 75px;
   object-fit: cover;
 }
-.magia-hecha-a {
+.magia-hecha-a1 {
   position: relative;
   font-weight: 600;
+  cursor: pointer;
 }
 .logoynombremuraldenoticias {
   position: absolute;
@@ -27,25 +28,25 @@
   flex-direction: row;
   align-items: center;
   justify-content: flex-start;
+  font-size: var(--sub-heading-1-size);
 }
 .cual-es-nuestro {
   position: absolute;
   top: 158px;
   left: 66px;
-  font-size: var(--heading-1-size);
   line-height: 80px;
   display: inline-block;
   color: var(--color-orange);
   width: 610px;
 }
-.nuestra-misin-se {
+.nuestra-misin-es {
   position: relative;
   letter-spacing: -0.02em;
   display: flex;
   align-items: flex-end;
   width: 667px;
 }
-.nuestra-misin-se-centra-en-es-wrapper {
+.nuestra-misin-es-destacar-las-wrapper {
   position: absolute;
   top: 293px;
   left: 52px;
@@ -54,25 +55,58 @@
   align-items: flex-start;
   justify-content: center;
   padding: var(--padding-3xs);
-  font-size: var(--font-size-6xl);
+  font-size: 25px;
   font-family: var(--font-work-sans);
 }
-.b77-5f06-402f-95ba-df9eea73d5e-icon {
+.suscripcion-icon {
   position: relative;
   border-radius: var(--br-xl);
-  width: 471px;
-  height: 414px;
+  width: 392px;
+  height: 340px;
   object-fit: cover;
 }
-.b77-5f06-402f-95ba-df9eea73d5e-wrapper {
+.suscripcion-wrapper {
   position: absolute;
-  top: 424px;
-  right: 28px;
+  top: 662px;
+  right: 55px;
+  width: 402px;
   display: flex;
   flex-direction: column;
   align-items: flex-end;
   justify-content: center;
   padding: var(--padding-3xs);
+  box-sizing: border-box;
+}
+.suscripcion {
+  position: relative;
+  line-height: 80px;
+  display: inline-block;
+  width: 384px;
+  height: 63px;
+  flex-shrink: 0;
+}
+.captura-de-pantalla-2023-12-11 {
+  position: relative;
+  border-radius: var(--br-xl);
+  width: 392px;
+  height: 325px;
+  object-fit: cover;
+}
+.captura-de-pantalla-2023-12-11-wrapper,
+.suscripcion-parent {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+}
+.captura-de-pantalla-2023-12-11-wrapper {
+  padding: var(--padding-3xs);
+}
+.suscripcion-parent {
+  position: absolute;
+  top: 189px;
+  right: 55px;
+  color: var(--color-darkgreen);
 }
 .sobrenosotros {
   position: relative;
@@ -81,7 +115,7 @@
   height: 1281px;
   overflow: hidden;
   text-align: left;
-  font-size: var(--sub-heading-1-size);
+  font-size: var(--heading-1-size);
   color: var(--color-white);
-  font-family: var(--heading-1);
+  font-family: var(--heading-3);
 }

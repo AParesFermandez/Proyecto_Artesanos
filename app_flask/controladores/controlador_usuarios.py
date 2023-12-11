@@ -6,6 +6,7 @@ from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt(app)
 
+
 # redireccion a login
 @app.route('/login', methods=['GET'])
 def despliega_login():

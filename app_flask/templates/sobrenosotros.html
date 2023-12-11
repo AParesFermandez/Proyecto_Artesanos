@@ -4,15 +4,15 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="initial-scale=1, width=device-width" />
 
-    <link rel="stylesheet" href="../static/css/global.css" />
-    <link rel="stylesheet" href="../static/css/sobrenosotros.css" />
+    <link rel="stylesheet" href="./static/css/global.css" />
+    <link rel="stylesheet" href="./static/css/sobrenosotros.css" />
     <link
       rel="stylesheet"
       href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap"
     />
     <link
       rel="stylesheet"
-      href="https://fonts.googleapis.com/css2?family=Work Sans:ital,wght@0,700;1,600&display=swap"
+      href="https://fonts.googleapis.com/css2?family=Work Sans:wght@700&display=swap"
     />
   </head>
   <body>
@@ -30,40 +30,54 @@
           src="./static/img/logomuraldenoticias@2x.png"
         />
 
-        <div class="magia-hecha-a">PasiónArtesana</div>
+        <div class="magia-hecha-a1" id="magiaHechaA">PasiónArtesana</div>
       </div>
       <b class="cual-es-nuestro">Cual es nuestro objetivo</b>
-      <div class="nuestra-misin-se-centra-en-es-wrapper">
-        <b class="nuestra-misin-se"
-          >Nuestra misión se centra en establecer vínculos significativos con
-          artesanos de todos los rincones del país, con el objetivo de poner de
-          relieve y exaltar sus habilidades inigualables. Nos embarcamos en la
-          misión de promover sus productos únicos, impregnados con la esencia de
-          la expresión artística, enriqueciendo cada creación a través del
-          ingenioso uso de materiales reciclados. Aspiramos a erigir una
-          plataforma sólida y acogedora que no solo les otorgue visibilidad,
-          sino que sirva como un trampolín crucial para el florecimiento de sus
-          talentos. En el corazón de nuestra iniciativa reside la convicción de
-          que cada artesano merece no solo ser reconocido, sino también contar
-          con una oportunidad genuina para prosperar. Nos esforzamos por crear
-          un espacio donde la autenticidad y la creatividad converjan, formando
-          una sinfonía única de expresión artística que resuene a nivel
-          nacional. Esta plataforma no solo busca impulsar la promoción de
-          productos artesanales, sino también cultivar un entorno propicio para
-          el crecimiento personal y profesional de quienes participan en este
-          vibrante universo creativo. Así, trabajamos incansablemente para hacer
-          realidad el sueño de cada creador, brindándoles las herramientas
-          necesarias para trascender fronteras y alcanzar nuevas alturas en su
-          viaje artístico y empresarial.</b
+      <div class="nuestra-misin-es-destacar-las-wrapper">
+        <b class="nuestra-misin-es"
+          >Nuestra misión es destacar las habilidades inigualables de artesanos
+          de todo el país, promoviendo sus productos únicos con esencia
+          artística y el uso ingenioso de materiales reciclados. Buscamos crear
+          una plataforma sólida que brinde visibilidad y sea un trampolín
+          crucial para el florecimiento de sus talentos. Creemos en proporcionar
+          oportunidades genuinas para que cada artesano prospere, fomentando un
+          espacio donde la autenticidad y la creatividad converjan en una
+          sinfonía única de expresión artística a nivel nacional. Más que
+          impulsar la promoción de productos artesanales, aspiramos a cultivar
+          un entorno propicio para el crecimiento personal y profesional de
+          quienes participan en este vibrante universo creativo. Trabajamos
+          incansablemente para hacer realidad el sueño de cada creador,
+          proporcionándoles las herramientas necesarias para trascender
+          fronteras y alcanzar nuevas alturas en su viaje artístico y
+          empresarial.</b
         >
       </div>
-      <div class="b77-5f06-402f-95ba-df9eea73d5e-wrapper">
+      <div class="suscripcion-wrapper">
         <img
-          class="b77-5f06-402f-95ba-df9eea73d5e-icon"
+          class="suscripcion-icon"
           alt=""
-          src="./static/img/65435b775f06402f95badf9eea73d5e1-1@2x.png"
+          src="./static/img/suscripcion@2x.png"
         />
       </div>
+      <div class="suscripcion-parent">
+        <b class="suscripcion">Suscripcion</b>
+        <div class="captura-de-pantalla-2023-12-11-wrapper">
+          <img
+            class="captura-de-pantalla-2023-12-11"
+            alt=""
+            src="./static/img/captura-de-pantalla-20231211-a-las-0156-1@2x.png"
+          />
+        </div>
+      </div>
     </div>
+
+    <script>
+      var magiaHechaA = document.getElementById("magiaHechaA");
+      if (magiaHechaA) {
+        magiaHechaA.addEventListener("click", function (e) {
+          window.location.href = "/servicios";
+        });
+      }
+      </script>
   </body>
 </html>
