@@ -128,3 +128,7 @@ textarea {
     cursor: pointer;
 }
 
+.botonesmenu{
+    text-decoration: none;
+    color: black;
+}

@@ -122,3 +122,8 @@ textarea {
     width: 50px;
     height: auto;
 }
+
+.botonesmenu{
+    text-decoration: none;
+    color: black;
+}
