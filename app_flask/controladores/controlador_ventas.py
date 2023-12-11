@@ -27,3 +27,4 @@ def detalle_venta(id):
     venta = Venta.obtener_por_id({'id': id})
     detalles = Venta.obtener_detalles({'id': id})
     return render_template('detalle_venta.html', venta=venta, detalles=detalles)
+

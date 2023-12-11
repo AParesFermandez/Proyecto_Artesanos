@@ -32,6 +32,14 @@ def publicar():
 def desplegar_noticia():
     return render_template('mural-de-noticias.html')
 
+@app.route('/servicios')
+def desplegar_servicios():
+    return render_template('servicio.html')
+
+@app.route('/index')
+def desplegar_index():
+    return render_template('index.html')
+
 #aca terminan las rutas del mati quedaron excelente 
 
 

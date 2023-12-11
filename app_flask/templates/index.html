@@ -118,7 +118,7 @@
           <div class="pesebre-asis">Categorias</div>
           <div class="auto-layout-horizontal5">
             <div class="auto-layout-vertical9">
-              <div class="ingresa-tu-imail2">servicios</div>
+              <div class="ingresa-tu-imail2" id="servicios">servicios</div>
               <div class="productos1" id="productosText">Productos</div>
               <div class="div"></div>
             </div>
@@ -688,7 +688,14 @@
           window.location.href = "/publicar";
         });
       }
-      
+
+      var servicios = document.getElementById("servicios");
+      if (servicios) {
+        servicios.addEventListener("click", function (e) {
+          window.location.href = "/servicios";
+        });
+      }
+
       var productosText = document.getElementById("productosText");
       if (productosText) {
         productosText.addEventListener("click", function (e) {
