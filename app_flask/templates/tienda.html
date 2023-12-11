@@ -30,7 +30,7 @@
         <div class="inicio-frame" id="frameContainer3">
           <div class="inicio2">Inicio</div>
         </div>
-        <div class="sobre-nosotros-frame">
+        <div class="sobre-nosotros-frame" id="sobrenosotrostextinicio">
           <div class="inicio2">sobre nosotros</div>
         </div>
         <div class="inicio-frame" id="frameContainer5">
@@ -89,7 +89,7 @@
         <div class="frame12">
           <div class="home4" id="homeText1">Home</div>
           <div class="home4" id="comunidadText2">Comunidad</div>
-          <div class="inicio2">Sobre nosotros</div>
+          <div class="inicio2" id="sobreNosotrosText1">Sobre nosotros</div>
         </div>
       </div>
       <div class="menu-parent1">
@@ -459,6 +459,13 @@
       });
     }
 
+    var sobrenosotrostextinicio = document.getElementById("sobrenosotrostextinicio");
+    if (sobrenosotrostextinicio) {
+      sobrenosotrostextinicio.addEventListener("click", function (e) {
+        window.location.href = "/sobrenosotros";
+      });
+    }
+  
     var frameContainer5 = document.getElementById("frameContainer5");
     if (frameContainer5) {
       frameContainer5.addEventListener("click", function (e) {
@@ -487,11 +494,11 @@
         window.location.href = "/noticias";
       });
     }
-    //no funciona el sobre nosotros hay que arreglarlo
-    var sobreNosotrosText1 = document.getElementById("frameContainer27");
+    //ahora si funciona wiiii
+    var sobreNosotrosText1 = document.getElementById("sobreNosotrosText1");
     if (sobreNosotrosText1) {
       sobreNosotrosText1.addEventListener("click", function (e) {
-        window.location.href = "/sobrenosotros"
+        window.location.href = "/sobrenosotros";
       });
     }
   </script>
