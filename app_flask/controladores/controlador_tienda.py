@@ -42,8 +42,12 @@ def desplegar_index():
 
 #aca terminan las rutas del mati quedaron excelente 
 
+#rutas para subir producto he imagenes
+@app.route('/procesa/producto')
+def crear_producto():
+    redirect('/recienagregados')
 
-
+#rutas para crear servicios
 @app.route('/crear_servicio_form', methods=['POST'])
 def crear_servicio_form():
     return render_template('crear_servicios.html')
