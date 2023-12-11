@@ -6,18 +6,14 @@ from flask_bcrypt import Bcrypt
 
 bcrypt = Bcrypt(app)
 
-@app.route('/', methods=['GET'])
-def despliega_index():
-    return render_template('login_registro.html')
-
 # redireccion a login
 @app.route('/login', methods=['GET'])
 def despliega_login():
-    return render_template('index.html')
+    return render_template('login_registro.html')
 # redireccion a registro
 @app.route('/registro', methods=['GET'])
 def despliega_registro():
-    return render_template('index.html')
+    return render_template('login_registro.html')
 # redireccion al home
 @app.route('/index', methods=['GET'])
 def despliega_home():
