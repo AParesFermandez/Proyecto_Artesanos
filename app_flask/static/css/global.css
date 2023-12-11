@@ -5,17 +5,17 @@ body {
 
 :root {
   /* fonts */
-  --heading-3: Inter;
   --font-work-sans: "Work Sans";
+  --heading-1: Inter;
 
   /* font sizes */
-  --sub-heading-2-size: 16px;
-  --heading-3-size: 32px;
-  --sub-heading-1-size: 24px;
-  --heading-2-size: 46px;
-  --button-1-size: 20px;
   --font-size-6xl: 25px;
   --heading-1-size: 64px;
+  --sub-heading-1-size: 24px;
+  --sub-heading-2-size: 16px;
+  --heading-3-size: 32px;
+  --heading-2-size: 46px;
+  --button-1-size: 20px;
 
   /* Colors */
   --color-white: #fff;

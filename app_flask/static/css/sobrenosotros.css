@@ -1,7 +1,87 @@
+.oigekfb2zh3kl5-1-icon {
+  position: absolute;
+  width: 100%;
+  top: 0;
+  right: 0;
+  left: 0;
+  max-width: 100%;
+  overflow: hidden;
+  height: 1281px;
+  object-fit: cover;
+}
+.logomuraldenoticias-icon {
+  position: relative;
+  width: 74px;
+  height: 75px;
+  object-fit: cover;
+}
+.magia-hecha-a {
+  position: relative;
+  font-weight: 600;
+}
+.logoynombremuraldenoticias {
+  position: absolute;
+  top: 41px;
+  left: 62px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-start;
+}
+.cual-es-nuestro {
+  position: absolute;
+  top: 158px;
+  left: 66px;
+  font-size: var(--heading-1-size);
+  line-height: 80px;
+  display: inline-block;
+  color: var(--color-orange);
+  width: 610px;
+}
+.nuestra-misin-se {
+  position: relative;
+  letter-spacing: -0.02em;
+  display: flex;
+  align-items: flex-end;
+  width: 667px;
+}
+.nuestra-misin-se-centra-en-es-wrapper {
+  position: absolute;
+  top: 293px;
+  left: 52px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: var(--padding-3xs);
+  font-size: var(--font-size-6xl);
+  font-family: var(--font-work-sans);
+}
+.b77-5f06-402f-95ba-df9eea73d5e-icon {
+  position: relative;
+  border-radius: var(--br-xl);
+  width: 471px;
+  height: 414px;
+  object-fit: cover;
+}
+.b77-5f06-402f-95ba-df9eea73d5e-wrapper {
+  position: absolute;
+  top: 424px;
+  right: 28px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: center;
+  padding: var(--padding-3xs);
+}
 .sobrenosotros {
   position: relative;
   background-color: var(--color-white);
   width: 100%;
-  height: 1997px;
+  height: 1281px;
   overflow: hidden;
+  text-align: left;
+  font-size: var(--sub-heading-1-size);
+  color: var(--color-white);
+  font-family: var(--heading-1);
 }

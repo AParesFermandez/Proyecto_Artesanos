@@ -30,7 +30,7 @@
         <div class="inicio-frame" id="frameContainer3">
           <div class="inicio2">Inicio</div>
         </div>
-        <div class="sobre-nosotros-frame">
+        <div class="sobre-nosotros-frame" id="sobrenosotrostextinicio">
           <div class="inicio2">sobre nosotros</div>
         </div>
         <div class="inicio-frame" id="frameContainer5">
@@ -89,7 +89,7 @@
         <div class="frame12">
           <div class="home4" id="homeText1">Home</div>
           <div class="home4" id="comunidadText2">Comunidad</div>
-          <div class="inicio2">Sobre nosotros</div>
+          <div class="inicio2" id="sobreNosotrosText1">Sobre nosotros</div>
         </div>
       </div>
       <div class="menu-parent1">
@@ -232,7 +232,7 @@
             <div class="frame-child39"></div>
             <div class="emboque-chileno-container">
               <div class="magia-hecha-a2">Mini conejito</div>
-              <div class="revisar-producto11">REvisar Producto</div>
+              <div class="revisar-producto11">Revisar Producto</div>
             </div>
           </div>
         </div>
@@ -390,7 +390,7 @@
             <div class="frame-child39"></div>
             <div class="emboque-chileno-container">
               <div class="magia-hecha-a2">Pebrera pepa brava</div>
-              <div class="revisar-producto11">REvisar Producto</div>
+              <div class="revisar-producto11">Revisar Producto</div>
             </div>
           </div>
         </div>
@@ -415,8 +415,8 @@
           <div class="frame-parent108">
             <div class="frame-child39"></div>
             <div class="emboque-chileno-container">
-              <div class="magia-hecha-a2">Colgante Kopiwe</div>
-              <div class="revisar-producto11">Revisar Producto</div>
+              <div class="magia-hecha-a2">Colgante Copihue</div>
+              <a class="revisar-producto11" href="/oficial">Revisar Producto</a>
             </div>
           </div>
         </div>
@@ -455,10 +455,17 @@
     var frameContainer3 = document.getElementById("frameContainer3");
     if (frameContainer3) {
       frameContainer3.addEventListener("click", function (e) {
-        window.location.href = "/oficial";
+        window.location.href = "/index";
       });
     }
 
+    var sobrenosotrostextinicio = document.getElementById("sobrenosotrostextinicio");
+    if (sobrenosotrostextinicio) {
+      sobrenosotrostextinicio.addEventListener("click", function (e) {
+        window.location.href = "/sobrenosotros";
+      });
+    }
+  
     var frameContainer5 = document.getElementById("frameContainer5");
     if (frameContainer5) {
       frameContainer5.addEventListener("click", function (e) {
@@ -466,17 +473,18 @@
       });
     }
 
+    //este es el de enviar correo
     var frameContainer15 = document.getElementById("frameContainer15");
     if (frameContainer15) {
       frameContainer15.addEventListener("click", function (e) {
-        // Please sync "feed artesanos" to the project
+        window.location.href = "/sobrenosotros"
       });
     }
 
     var homeText1 = document.getElementById("homeText1");
     if (homeText1) {
       homeText1.addEventListener("click", function (e) {
-        window.location.href = "/oficial";
+        window.location.href = "/index";
       });
     }
 
@@ -486,11 +494,11 @@
         window.location.href = "/noticias";
       });
     }
-
-    var frameContainer27 = document.getElementById("frameContainer27");
-    if (frameContainer27) {
-      frameContainer27.addEventListener("click", function (e) {
-        // Please sync "feed artesanos" to the project
+    //ahora si funciona wiiii
+    var sobreNosotrosText1 = document.getElementById("sobreNosotrosText1");
+    if (sobreNosotrosText1) {
+      sobreNosotrosText1.addEventListener("click", function (e) {
+        window.location.href = "/sobrenosotros";
       });
     }
   </script>
