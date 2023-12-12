@@ -37,19 +37,27 @@
             <div class="col-lg-6">
                 <div class="right-container">
                     <h1 class="title">¡Comparte tu Producto o Servicio!</h1>
-                    <form method="POST" action="/procesa/registro">
+                    <form method="POST" action="/procesa/producto">
                         <div class="form-group">
                             <label for="nombreProducto">Nombre del Producto o Servicio:</label>
                             <input type="text" id="nombreProducto" name="nombreProducto" class="form-control" placeholder="Nombre de tu producto o servicio">
                         </div>
-                        <div class="form-group">
-                            <label for="ubicacion">Ubicación:</label>
-                            <input type="text" id="ubicacion" name="ubicacion" class="form-control" placeholder="Lugar donde vendes tu producto/servicio">
+                        <!--check para servicio-->
+                        <div class="mb-3 form-check">
+                            <input type="checkbox" id="es_servicio" name="es_servicio" class="form-check-input">
+                            <label for="es_servicio" class="form-check-label" id="servicio">Servicio</label>
                         </div>
                         <div class="form-group">
                             <label for="descripcion">Descripción:</label>
                             <textarea id="descripcion" name="descripcion" class="form-control" placeholder="Agrega una descripción a tu producto o servicio"></textarea>
                         </div>
+                    </form>
+                    <form action="/procesa/datos_usuario">
+                        <div class="form-group">
+                            <label for="ubicacion">Ubicación:</label>
+                            <input type="text" id="ubicacion" name="ubicacion" class="form-control" placeholder="Lugar donde vendes tu producto/servicio">
+                        </div>
+                        
                         <div class="form-group">
                             <label for="numeroContacto">Número de Contacto:</label>
                             <input type="text" id="numeroContacto" name="numeroContacto" class="form-control" placeholder="Contacto">

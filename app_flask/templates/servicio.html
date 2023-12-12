@@ -483,6 +483,12 @@
 
     <script>
       //barra navegacion
+      var iniciotiendaservicioContainer = document.getElementById("iniciotiendaservicioContainer");
+      if (iniciotiendaservicioContainer) {
+        iniciotiendaservicioContainer.addEventListener("click", function (e) {
+          window.location.href = "/index";
+        });
+      }
 
       var inicioText = document.getElementById("inicioText");
       if (inicioText) {

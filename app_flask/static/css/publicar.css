@@ -123,7 +123,13 @@ textarea {
     height: auto;
 }
 
+/*arreglos amanda botones de la bara de navegacion*/
 .botonesmenu{
     text-decoration: none;
     color: black;
+}
+
+/*cambio de estilo check para servicios*/
+#servicio{
+    color: green;
 }
