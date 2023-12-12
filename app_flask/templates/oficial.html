@@ -27,19 +27,20 @@
       </div>
       <div class="frame4">
         <div class="vector-frame">
-          <img class="vector-icon29" alt="" src="./static/img/vector1.svg" />
+          <span class="welcome-message">Bienvenido, [Nombre de Usuario]</span>
+          <img class="vector-icon29" id="iconologin" alt="" src="./static/img/vector1.svg" />
         </div>
       </div>
       <div class="frame5">
         <div class="menu-item1">
           <div class="inicio-container">
-            <div class="region-de-maule">Inicio</div>
+            <div class="region-de-maule" id="inicio">Inicio</div>
           </div>
           <div class="inicio-container">
-            <div class="region-de-maule">sobre nosotros</div>
+            <div class="region-de-maule" id="sobrenosotros">sobre nosotros</div>
           </div>
           <div class="inicio-container">
-            <div class="region-de-maule">comunidad</div>
+            <div class="region-de-maule" id="comunidad">comunidad</div>
           </div>
         </div>
       </div>
@@ -55,17 +56,17 @@
         <div class="menu-group">
           <div class="colgante-kopiwe">Menu</div>
           <div class="frame6">
-            <div class="region-de-maule">Home</div>
+            <div class="region-de-maule" id="inicionoticias">Home</div>
             <div class="comunidad3" id="comunidadText1">Comunidad</div>
-            <div class="region-de-maule">Sobre nosotros</div>
+            <div class="region-de-maule" id="sobrenosotrosnoticias">Sobre nosotros</div>
           </div>
         </div>
         <div class="menu-group">
           <div class="colgante-kopiwe">Categorias</div>
           <div class="frame-wrapper4">
             <div class="frame7">
-              <div class="region-de-maule">servicios</div>
-              <div class="productos1">Productos</div>
+              <div class="region-de-maule" id="servicios">servicios</div>
+              <div class="productos1" id="productos">Productos</div>
               <div class="text1"></div>
             </div>
           </div>
@@ -122,10 +123,9 @@
           </div>
           <div class="frame-parent44">
             <div class="producto-wrapper">
-              <div class="producto">Producto</div>
             </div>
             <div class="colgante-kopiwe-wrapper">
-              <div class="colgante-kopiwe">Colgante Kopiwe</div>
+              <div class="colgante-kopiwe">Colgante Copihue</div>
             </div>
           </div>
         </div>
@@ -226,7 +226,44 @@
     </div>
 
     <script>
-      //falta para el boton de home que redireccione al index
+//barra navegacion
+      var inicio = document.getElementById("inicio");
+      if (inicio) {
+        inicio.addEventListener("click", function (e) {
+          window.location.href = "/index";
+        });
+      }
+
+      var sobrenosotros = document.getElementById("sobrenosotros");
+      if (sobrenosotros) {
+        sobrenosotros.addEventListener("click", function (e) {
+          window.location.href = "/sobrenosotros";
+        });
+      }
+
+      var comunidad = document.getElementById("comunidad");
+      if (comunidad) {
+      comunidad.addEventListener("click", function (e) {
+          window.location.href = "/noticias";
+      });
+    }
+
+    //loginmonito
+
+    var iconologin = document.getElementById("iconologin");
+      if (iconologin) {
+      iconologin.addEventListener("click", function (e) {
+          window.location.href = "/perfil";
+      });
+    }
+
+//menu de abajito
+      var inicionoticias = document.getElementById("inicionoticias");
+        if (inicionoticias) {
+          inicionoticias.addEventListener("click", function (e) {
+            window.location.href = "/index";
+          });
+        }
 
       var comunidadText1 = document.getElementById("comunidadText1");
       if (comunidadText1) {
@@ -234,6 +271,28 @@
           window.location.href = "/noticias";
         });
       }
+
+      var sobrenosotrosnoticias = document.getElementById("sobrenosotrosnoticias");
+      if (sobrenosotrosnoticias) {
+        sobrenosotrosnoticias.addEventListener("click", function (e) {
+          window.location.href = "/sobrenosotros";
+        });
+      }
+
+      var servicios = document.getElementById("servicios");
+      if (servicios) {
+      servicios.addEventListener("click", function (e) {
+          window.location.href = "/servicios";
+        });
+      }
+
+      var productos = document.getElementById("productos");
+      if (productos) {
+      productos.addEventListener("click", function (e) {
+          window.location.href = "/tienda";
+        });
+      }
+
 
       //parece que no es el
 

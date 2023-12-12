@@ -85,16 +85,29 @@
           </div>
         </div>
       </div>
+      <!--aqui estara el mensaje de bienvenida-->
       <div class="auto-layout-vertical6">
         <div class="auto-layout-horizontal4">
-          <img
-            class="logininicio-icon"
-            alt=""
-            src="./static/img/logininicio.svg"
-            id="logininicioIcon"
-          />
+          {% if usuario %}
+            <span class="welcome-message">Bienvenido, {{ usuario.full_name() }}</span>
+            <img
+              src="./static/img/cerrar_sesion.png"
+              alt="Cerrar sesión"
+              class="cerrar-sesion-icon"
+              onclick="location.href='/cerrar_sesion';"
+            />
+          {% else %}
+            <span class="welcome-message">Bienvenido, Invitado</span>
+            <img
+              src="./static/img/logininicio.svg"
+              alt="Iniciar sesión"
+              class="logininicio-icon"
+              onclick="location.href='/login';"
+            />
+          {% endif %}
         </div>
       </div>
+      <!-- Hasta aquí el login -->
       <div class="menuinicio">
         <div class="opcionesmenuinicio">
           <div class="publicar3">

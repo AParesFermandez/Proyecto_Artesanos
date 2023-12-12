@@ -22,8 +22,23 @@ def despliega_registro():
 # redireccion al home
 @app.route('/index', methods=['GET'])
 def despliega_home():
-    return render_template('index.html')
+    # Verificar si hay una sesión activa
+    if 'id_usuario' in session:
+        usuario_actual = Usuario.obtener_uno_por_id(session['id_usuario'])
+        return render_template('index.html', usuario=usuario_actual)
+    else:
+        return render_template('index.html', usuario=None)
 
+#cerrar sesion
+@app.route('/cerrar_sesion')
+def cerrar_sesion():
+    # Eliminar las variables de sesión
+    session.pop('id_usuario', None)
+    session.pop('nombre', None)
+    session.pop('apellido', None)
+    
+    # Redireccionar a la página de inicio de sesión o a donde desees después de cerrar sesión
+    return redirect('/index')
 
 @app.route('/procesa/registro', methods=['POST'])
 def procesa_registro():
@@ -78,3 +93,7 @@ def procesa_login():
     session['apellido'] = usuario_login.apellido
 
     return redirect('/index')
+
+@app.route('/procesa/datos_usuario', methods=['POST'])
+def procesa_datos_usuario():
+    return render_template('index.html')

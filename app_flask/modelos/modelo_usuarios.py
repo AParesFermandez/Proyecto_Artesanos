@@ -55,6 +55,35 @@ class Usuario:
 
         print("Después del try-except")  # Impresión de prueba
 
+    #metodo para capturar usuario logueado
+    @classmethod
+    def obtener_uno_por_id(cls, id_usuario):
+        query = "SELECT * FROM usuarios WHERE id = %(id)s;"
+        datos = {'id': id_usuario}
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        if len(resultado) > 0:
+            return cls(resultado[0])
+        else:
+            return None
+
+    @classmethod
+    def obtener_uno_por_email(cls, email):
+        query = "SELECT * FROM usuarios WHERE email = %(email)s;"
+        datos = {'email': email}
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        if len(resultado) > 0:
+            return cls(resultado[0])
+        else:
+            return None
+
+    @classmethod
+    def procesa_datos_usuario(cls):
+        query=  """
+                INSERT INTO usuarios (nombre, email, region, celular, redes_sociales)
+                VALUES (%(nombre)s, %(email)s, %(region)s, %(celular)s, %(redes_sociales)s );
+                """
+        return connectToMySQL(BASE_DATOS).query_db(query)
+
     @classmethod
     def editar_usuario(cls):
         query=  """
@@ -63,29 +92,8 @@ class Usuario:
                 """
         return connectToMySQL(BASE_DATOS).query_db(query)
 
-
-    @classmethod
-    def obtener_usuario_por_id(cls, datos):
-        query=  """
-
-                """
-        return connectToMySQL(BASE_DATOS).query_db(query)
-
-    @classmethod
-    def obtener_uno(cls,):
-        return
     
-    @classmethod
-    def obtener_uno_por_email(cls, email):
-        query = "SELECT * FROM usuarios WHERE email = %(email)s;"
-        data = { 'email': email }
-        result = connectToMySQL(BASE_DATOS).query_db(query, data)
         
-        # Verificar si se encontró algún usuario con ese correo electrónico
-        if len(result) > 0:
-            return cls(result[0])  # Crear una instancia de Usuario con los datos obtenidos de la consulta
-        else:
-            return None
 
     @staticmethod
     def validar_registro(datos):

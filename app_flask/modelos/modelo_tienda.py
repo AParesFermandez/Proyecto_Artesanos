@@ -92,43 +92,34 @@ class comentarios:
     
     
     @classmethod
-    def crear_servicio(cls, productos):
+    def crear_servicio(cls, datos_servicio):
         query = """
-                INSERT INTO productos (id, nombre_servicio, descripcion, imagenes, valoracion) VALUES (%(id)s, %(nombre_servicio)s, %(descripcion)s, %(precio)s); 
-                FROM productos
-                WHERE id = %(productos_id)s;
+                INSERT INTO servicios (nombre_servicio, descripcion, imagenes, valoracion) 
+                VALUES (%(nombre_servicio)s, %(descripcion)s, %(imagenes)s, %(valoracion)s);
                 """
-        resultado = connectToMySQL(BASE_DATOS).query_db(query, {'productos': productos})
-        if len(resultado) == 0:
-            return None
-        return cls(resultado[0])
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos_servicio)
+        return resultado
     
     
 
     @classmethod
-    def crear_producto(cls, productos):
+    def crear_producto(cls, datos_producto):
         query = """
-                INSERT productos (id, nombre, descripcion, imagen) VALUES (%(id)s, %(nombre)s, %(descripcion)s, %(imagen)s); 
-                JOIN usuarios (nombre)
-                SET t1.columna1 = valor_nuevo1,
-                t2.columna2 = valor_nuevo2
+                INSERT INTO productos (nombre, descripcion, imagen) 
+                VALUES (%(nombre)s, %(descripcion)s, %(imagen)s;
                 """
-        resultado = connectToMySQL(BASE_DATOS).query_db(query, {'productos': productos})
-        if len(resultado) == 0:
-            return None
-        return cls(resultado[0])
-    
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos_producto)
+        return resultado
+
     @classmethod
-    def obtener_producto_por_id(cls, productos):
+    def obtener_producto_por_id(cls, producto_id):
         query = """
                 SELECT *
                 FROM productos
-                WHERE id = %(productos_id)s;
+                WHERE id = %(producto_id)s;
                 """
-        resultado = connectToMySQL(BASE_DATOS).query_db(query, {'productos': productos})
-        if len(resultado) == 0:
-            return None
-        return cls(resultado[0])
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, {'producto_id': producto_id})
+        return cls(resultado[0]) if resultado else None
     
     @classmethod
     def obtener_productos_por_categoria(cls, categorias):

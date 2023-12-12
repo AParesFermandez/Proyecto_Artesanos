@@ -25,6 +25,8 @@ def sobrenosotros():
 
 @app.route('/publicar')
 def publicar():
+    if "id_usuario" not in session:
+        return redirect('/')
     return render_template('publicar.html')
 
 #ruta para que muestre mural noticias
@@ -52,40 +54,50 @@ def crear_producto():
 def crear_servicio_form():
     return render_template('crear_servicios.html')
 
-# Ruta para manejar el envío del formulario
-@app.route('/crear_servicio', methods=['POST'])
+#@app.route('/crear_servicio', methods=['POST'])
 def crear_servicio():
+    if "id_usuario" not in session:
+        return redirect('/')
     if request.method == 'POST':
-        id_servicio = request.form['id']
+        # No necesitas 'id' en este formulario, elimínalo
         nombre_servicio = request.form['nombre_servicio']
         descripcion = request.form['descripcion']
-        imagenes = request.form['imagenes'].split(',')  # Si las URL de las imágenes están separadas por comas
+        imagenes = request.form['imagenes'].split(',')
         valoracion = request.form['valoracion']
-    
-    datos_servicio = {
-            "id_servicio" : id_servicio,
+
+        datos_servicio = {
             'nombre_servicio': nombre_servicio,
             'descripcion': descripcion,
             'imagenes': imagenes,
-            "valoracion": valoracion
+            'valoracion': valoracion
         }
-    
-    if not servicios.validar_servicios(datos_servicio):
-            return redirect(f'/editar/{id}')
 
-@app.route('/servicio_creado/<int:id_producto>')
-def mostrar_servicio_creado(id_producto):
+        # Llamar a la función para crear el servicio
+        servicio_creado = servicios.crear_servicio(datos_servicio)
 
-    servicio_ficticio = {
-        'id': id_producto,
-        'nombre': 'Servicio de ejemplo',
-        'descripcion': 'Descripción del servicio',
-        'imagenes': ['url-imagen-1.jpg', 'url-imagen-2.jpg'],
-        'valoracion': 4.5
-    }
+        if not servicio_creado:
+            flash('Error al crear el servicio', 'error')
+            return redirect('/procesa/producto')  # Ajusta esta redirección según tus necesidades
 
+        # Redirigir a una nueva ruta para mostrar el servicio creado
+        return redirect(f'/servicio_creado/{servicio_creado.get_id()}')
 
-    return render_template('servicio_creado.html', servicio=servicio_ficticio)
+# Ruta para mostrar el servicio recién creado
+@app.route('/servicio_creado/<int:id_servicio>')
+def mostrar_servicio_creado(id_servicio):
+    if "id_usuario" not in session:
+        return redirect('/')
+    # Utiliza el método de clase para obtener el servicio por ID
+    servicio_creado = servicios.obtener_servicio_por_id(id_servicio)
 
-
-
+@app.route('/producto_creado/<int:id_producto>')
+def mostrar_producto_creado(id_producto):
+    if "id_usuario" not in session:
+        return redirect('/')
+    # Utiliza el método de clase para obtener el servicio por ID
+    producto_creado = servicios.obtener_producto_por_id(id_producto)
+    if producto_creado:
+        return render_template('producto_creado.html', producto=producto_creado)
+    # Manejo de errores si no se encuentra el servicio
+    flash('producto no encontrado', 'error')
+    return redirect('/')

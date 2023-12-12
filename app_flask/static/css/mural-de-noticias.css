@@ -19,7 +19,6 @@
   color: var(--color-orange);
 }
 .loginmuraldenoticias-icon {
-  position: relative;
   width: 20px;
   height: 21.1px;
   cursor: pointer;
@@ -27,21 +26,20 @@
 .frame28,
 .loginmuraldenoticias-wrapper {
   display: flex;
-  flex-direction: row;
   align-items: center;
-  justify-content: center;
-  padding: var(--padding-base) var(--padding-5xl);
 }
 .frame28 {
   position: absolute;
   top: 34px;
   right: 24px;
-  width: 68px;
+  display: flex;
+  align-items: center;
+  width: auto; /* Cambiado el ancho a automático para adaptarse al contenido */
   height: 72.1px;
   overflow: hidden;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0.000003814697265625px var(--padding-0);
+  flex-direction: row; /* Cambiado a dirección de fila */
+  justify-content: flex-end; /* Ajuste al extremo derecho */
+  padding: 0; /* Eliminar el padding para que se ajuste correctamente */
   box-sizing: border-box;
 }
 .inicio2 {

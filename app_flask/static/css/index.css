@@ -235,33 +235,44 @@
   gap: 44px;
   font-size: var(--heading-1-size);
 }
-.logininicio-icon {
-  position: relative;
-  width: 20px;
-  height: 21.1px;
-  cursor: pointer;
-}
-.auto-layout-horizontal4,
-.auto-layout-vertical6 {
-  height: 53px;
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-base) var(--padding-5xl);
-  box-sizing: border-box;
-}
+/* Estilos para la disposición de las imágenes */
 .auto-layout-vertical6 {
   position: absolute;
   top: 34px;
   right: 24px;
-  width: 68px;
+  display: flex;
+  align-items: center;
   height: 72px;
   overflow: hidden;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0.000003814697265625px var(--padding-0);
 }
+
+.auto-layout-horizontal4 {
+  display: flex;
+  align-items: center;
+  margin-left: auto; /* Alinea a la derecha */
+}
+
+/* Estilo para el mensaje de bienvenida */
+.auto-layout-vertical6 span.welcome-message {
+  font-size: 16px; /* Tamaño de fuente del mensaje de bienvenida */
+  color: black !important;
+  margin-right: 10px; /* Espacio entre el mensaje y el icono de inicio de sesión */
+}
+
+.logininicio-icon {
+  width: 20px;
+  height: 21.1px;
+  cursor: pointer;
+}
+
+/* Estilos para la imagen de cierre de sesión */
+.cerrar-sesion-icon {
+  width: 20px; /* Ajusta el ancho según sea necesario */
+  height: 20px; /* Ajusta la altura según sea necesario */
+  cursor: pointer;
+  margin-left: 10px; /* Espacio entre la imagen de inicio de sesión y la de cierre de sesión */
+}
+
 .publicar4 {
   position: relative;
   font-weight: 500;
