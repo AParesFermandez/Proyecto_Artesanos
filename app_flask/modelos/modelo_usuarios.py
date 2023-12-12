@@ -92,8 +92,35 @@ class Usuario:
                 """
         return connectToMySQL(BASE_DATOS).query_db(query)
 
-    
-        
+    @classmethod
+    def actualizar(self):
+        query = """
+            UPDATE usuarios 
+            SET nombre = %(nombre)s, apellido = %(apellido)s,
+                email = %(email)s, direccion = %(direccion)s,
+                ciudad = %(ciudad)s, region = %(region)s,
+                numero_contacto = %(numero_contacto)s,
+                redes_sociales = %(redes_sociales)s
+            WHERE id = %(id)s;
+        """
+
+        datos_usuario = {
+            'id': self.id,
+            'nombre': self.nombre,
+            'apellido': self.apellido,
+            'email': self.email,
+            'direccion': self.direccion,
+            'ciudad': self.ciudad,
+            'region': self.region,
+            'numero_contacto': self.celular,
+            'redes_sociales': self.redes_sociales
+        }
+
+        try:
+            connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
+        except Exception as e:
+            print("Error al actualizar usuario:", e)
+            raise  # Re-raise the exception to get the traceback information
 
     @staticmethod
     def validar_registro(datos):
