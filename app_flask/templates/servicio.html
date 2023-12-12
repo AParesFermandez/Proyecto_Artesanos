@@ -24,12 +24,23 @@
       </div>
       <div class="frame">
         <div class="logintiendaservicio-wrapper">
-          <img
-            class="logintiendaservicio-icon"
-            alt=""
-            src="./static/img/logintiendaservicio.svg"
-            id="logintiendaservicioIcon"
-          />
+          {% if usuario %}
+            <span class="welcome-message">Bienvenido, {{ usuario.full_name() }}</span>
+            <img
+              src="./static/img/cerrar_sesion.png"
+              alt="Cerrar sesión"
+              class="cerrar-sesion-icon"
+              onclick="location.href='/cerrar_sesion';"
+            />
+          {% else %}
+            <span class="welcome-message">Bienvenido, Invitado</span>
+            <img
+              src="./static/img/logininicio.svg"
+              alt="Iniciar sesión"
+              class="logininicio-icon"
+              onclick="location.href='/login';"
+            />
+          {% endif %}
         </div>
       </div>
       <div class="opcionesmenutiendaservicio">
@@ -37,9 +48,13 @@
           <div class="iniciotiendaservicio" id="iniciotiendaservicioContainer">
             <div class="inicio" id="inicioText">Inicio</div>
           </div>
-          <div class="publicartiendaservicio">
-            <div class="inicio" id="publicarText">Publicar</div>
-          </div>
+          {% if usuario %}
+            {% if usuario.tipo_usuario == 1 %}
+              <div class="publicartiendaservicio">
+                <div class="inicio" id="publicarText">Publicar</div>
+              </div>
+            {% endif %}
+          {% endif %}
           <div class="publicartiendaservicio">
             <div class="inicio" id="comunidadText">comunidad</div>
           </div>

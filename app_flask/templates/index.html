@@ -108,16 +108,21 @@
         </div>
       </div>
       <!-- Hasta aquí el login -->
-      <div class="menuinicio">
-        <div class="opcionesmenuinicio">
-          <div class="publicar3">
-            <div class="publicar4" id="publicarText">Publicar</div>
-          </div>
-          <div class="publicar3">
-            <div class="publicar4" id="comunidadText">comunidad</div>
+      <!--aqui la logica para que se vea o no el boton publicar-->
+        <div class="menuinicio">
+          <div class="opcionesmenuinicio">
+            {% if usuario %}
+              {% if usuario.tipo_usuario == 1 %}
+                <div class="publicar3">
+                  <div class="publicar4" id="publicarText">Publicar</div>
+                </div>
+              {% endif %}
+            {% endif %}
+            <div class="publicar3">
+              <div class="publicar4" id="comunidadText">comunidad</div>
+            </div>
           </div>
         </div>
-      </div>
       <div class="menucategoriassocialinicio">
         <div class="auto-layout-vertical7">
           <div class="pesebre-asis">Menu</div>

@@ -18,7 +18,7 @@
   justify-content: flex-start;
   color: var(--color-orange);
 }
-/* Estilo para el mensaje de bienvenida en negro */
+/* Estilos para el mensaje de bienvenida en negro */
 .frame span {
   font-size: 16px; /* Tamaño de fuente del mensaje */
   color: black !important; /* Cambiar el color del texto a negro */
@@ -51,6 +51,7 @@
   height: 21.1px;
   cursor: pointer;
 }
+
 .inicio {
   position: relative;
   font-weight: 500;

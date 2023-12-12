@@ -18,8 +18,23 @@
       </div>
       <div class="frame">
         <div class="logintienda-wrapper">
-          <span class="welcome-message">Bienvenido, [Nombre de Usuario]</span>
-          <img class="logintienda-icon" alt="" src="./static/img/logintienda.svg" id="logintiendaIcon" />
+          {% if usuario %}
+            <span class="welcome-message">Bienvenido, {{ usuario.full_name() }}</span>
+            <img
+              class="logintienda-icon"
+              alt=""
+              src="./static/img/logintienda.svg"
+              id="logintiendaIcon"
+            />
+          {% else %}
+            <span class="welcome-message">Bienvenido, Invitado</span>
+            <img
+              class="logintienda-icon"
+              alt=""
+              src="./static/img/logintienda.svg"
+              id="logintiendaIcon"
+            />
+          {% endif %}
         </div>
       </div>
       <div class="opcionesmenutienda">
@@ -27,14 +42,19 @@
           <div class="iniciotienda" id="iniciotiendaContainer">
             <div class="inicio" id="inicioText">Inicio</div>
           </div>
-          <div class="publicartienda">
-            <div class="inicio" id="publicarText">Publicar</div>
-          </div>
+          {% if usuario %}
+            {% if usuario.tipo_usuario == 1 %}
+              <div class="publicartienda">
+                <div class="inicio" id="publicarText">Publicar</div>
+              </div>
+            {% endif %}
+          {% endif %}
           <div class="publicartienda">
             <div class="inicio" id="comunidadText">comunidad</div>
           </div>
         </div>
       </div>
+      
       <img class="findelfeedtienda-icon" alt="" src="./static/img/findelfeedtienda@2x.png"/>
       <div class="frame-parent">
         <div class="menu-parent">

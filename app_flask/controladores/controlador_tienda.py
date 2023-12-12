@@ -17,7 +17,12 @@ def detalles_vendedor():
 
 @app.route('/tienda')
 def desplegar_tienda():
-    return render_template('tienda.html')
+    # Asegurarse de que el usuario esté en sesión antes de renderizar la plantilla
+    if 'id_usuario' in session:
+        usuario_actual = Usuario.obtener_uno_por_id(session['id_usuario'])
+        return render_template('tienda.html', usuario=usuario_actual)
+    else:
+        return render_template('tienda.html', usuario=None)
 
 @app.route('/sobrenosotros')
 def sobrenosotros():
@@ -32,11 +37,21 @@ def publicar():
 #ruta para que muestre mural noticias
 @app.route('/noticias')
 def desplegar_noticia():
-    return render_template('mural-de-noticias.html')
+    if 'id_usuario' in session:
+        usuario_actual = Usuario.obtener_uno_por_id(session['id_usuario'])
+        return render_template('mural-de-noticias.html', usuario=usuario_actual)
+    else:
+        return render_template('mural-de-noticias.html', usuario=None)
+
 
 @app.route('/servicios')
 def desplegar_servicios():
-    return render_template('servicio.html')
+    # Asegurarse de que el usuario esté en sesión antes de renderizar la plantilla
+    if 'id_usuario' in session:
+        usuario_actual = Usuario.obtener_uno_por_id(session['id_usuario'])
+        return render_template('servicio.html', usuario=usuario_actual)
+    else:
+        return render_template('servicio.html', usuario=None)
 
 @app.route('/index')
 def desplegar_index():
