@@ -24,27 +24,45 @@
   height: 21.1px;
   cursor: pointer;
 }
-.logintiendaservicio-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-base) 24px;
-}
+/* Estilos para la disposición de las imágenes */
 .frame {
   position: absolute;
   top: 34px;
   right: 24px;
-  width: 68px;
-  height: 72.1px;
-  overflow: hidden;
   display: flex;
-  flex-direction: column;
   align-items: center;
-  justify-content: flex-end;
-  padding: 0.000003814697265625px 0;
-  box-sizing: border-box;
+  height: 72px;
+  overflow: hidden;
 }
+
+.logintiendaservicio-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end; /* Alineación a la derecha */
+  padding-right: 10px; /* Espacio a la derecha */
+}
+
+/* Estilo para el mensaje de bienvenida */
+.frame .welcome-message {
+  font-size: 16px;
+  color: black !important;
+  margin-right: 10px; /* Espacio entre el mensaje y el icono de inicio de sesión */
+}
+
+/* Estilos para las imágenes de inicio y cierre de sesión */
+.frame .logininicio-icon {
+  width: 20px;
+  height: 21.1px;
+  cursor: pointer;
+  margin-left: 10px; /* Espacio entre la imagen de inicio de sesión y la de cierre de sesión */
+}
+
+.frame .cerrar-sesion-icon {
+  width: 20px;
+  height: 20px;
+  cursor: pointer;
+}
+
 .inicio {
   position: relative;
   font-weight: 500;

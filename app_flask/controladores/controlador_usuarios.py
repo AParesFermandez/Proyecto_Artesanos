@@ -9,7 +9,33 @@ bcrypt = Bcrypt(app)
 #redireccion perfil
 @app.route('/perfil')
 def despliega_perfil():
-    return render_template('perfil.html')
+    if 'id_usuario' in session:
+        usuario_actual = Usuario.obtener_uno_por_id(session['id_usuario'])
+        print(usuario_actual.email)  # Verifica si el email se imprime correctamente
+        return render_template('perfil.html', usuario=usuario_actual)
+    else:
+        return redirect('/login')  # O redirige a donde sea apropiado si no hay usuario autenticado
+
+@app.route('/actualizar_usuario', methods=['POST'])
+def actualizar_datos_usuario():
+    if 'id_usuario' in session:
+        usuario_actual = Usuario.obtener_uno_por_id(session['id_usuario'])
+
+        if usuario_actual:
+            usuario_actual.nombre = request.form.get('nombreProducto')
+            usuario_actual.apellido = request.form.get('apellido')
+            usuario_actual.email = request.form.get('email')
+            usuario_actual.direccion = request.form.get('direccion')
+            usuario_actual.ciudad = request.form.get('ciudad')
+            usuario_actual.region = request.form.get('region')
+            usuario_actual.numero_contacto = request.form.get('numeroContacto')
+            usuario_actual.redes_sociales = request.form.get('redesSociales')
+
+            usuario_actual.actualizar()  # Método para actualizar los datos en la base de datos
+
+            return redirect('/index')  # Redirige a la página de perfil después de actualizar
+    
+    return redirect('/index')
 
 # redireccion a login
 @app.route('/login', methods=['GET'])
@@ -22,8 +48,23 @@ def despliega_registro():
 # redireccion al home
 @app.route('/index', methods=['GET'])
 def despliega_home():
-    return render_template('index.html')
+    # Verificar si hay una sesión activa
+    if 'id_usuario' in session:
+        usuario_actual = Usuario.obtener_uno_por_id(session['id_usuario'])
+        return render_template('index.html', usuario=usuario_actual)
+    else:
+        return render_template('index.html', usuario=None)
 
+#cerrar sesion
+@app.route('/cerrar_sesion')
+def cerrar_sesion():
+    # Eliminar las variables de sesión
+    session.pop('id_usuario', None)
+    session.pop('nombre', None)
+    session.pop('apellido', None)
+    
+    # Redireccionar a la página de inicio de sesión o a donde desees después de cerrar sesión
+    return redirect('/index')
 
 @app.route('/procesa/registro', methods=['POST'])
 def procesa_registro():
@@ -78,3 +119,7 @@ def procesa_login():
     session['apellido'] = usuario_login.apellido
 
     return redirect('/index')
+
+@app.route('/procesa/datos_usuario', methods=['POST'])
+def procesa_datos_usuario():
+    return render_template('index.html')

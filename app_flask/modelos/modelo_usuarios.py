@@ -55,6 +55,35 @@ class Usuario:
 
         print("Después del try-except")  # Impresión de prueba
 
+    #metodo para capturar usuario logueado
+    @classmethod
+    def obtener_uno_por_id(cls, id_usuario):
+        query = "SELECT * FROM usuarios WHERE id = %(id)s;"
+        datos = {'id': id_usuario}
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        if len(resultado) > 0:
+            return cls(resultado[0])
+        else:
+            return None
+
+    @classmethod
+    def obtener_uno_por_email(cls, email):
+        query = "SELECT * FROM usuarios WHERE email = %(email)s;"
+        datos = {'email': email}
+        resultado = connectToMySQL(BASE_DATOS).query_db(query, datos)
+        if len(resultado) > 0:
+            return cls(resultado[0])
+        else:
+            return None
+
+    @classmethod
+    def procesa_datos_usuario(cls):
+        query=  """
+                INSERT INTO usuarios (nombre, email, region, celular, redes_sociales)
+                VALUES (%(nombre)s, %(email)s, %(region)s, %(celular)s, %(redes_sociales)s );
+                """
+        return connectToMySQL(BASE_DATOS).query_db(query)
+
     @classmethod
     def editar_usuario(cls):
         query=  """
@@ -63,29 +92,35 @@ class Usuario:
                 """
         return connectToMySQL(BASE_DATOS).query_db(query)
 
-
     @classmethod
-    def obtener_usuario_por_id(cls, datos):
-        query=  """
+    def actualizar(self):
+        query = """
+            UPDATE usuarios 
+            SET nombre = %(nombre)s, apellido = %(apellido)s,
+                email = %(email)s, direccion = %(direccion)s,
+                ciudad = %(ciudad)s, region = %(region)s,
+                numero_contacto = %(numero_contacto)s,
+                redes_sociales = %(redes_sociales)s
+            WHERE id = %(id)s;
+        """
 
-                """
-        return connectToMySQL(BASE_DATOS).query_db(query)
+        datos_usuario = {
+            'id': self.id,
+            'nombre': self.nombre,
+            'apellido': self.apellido,
+            'email': self.email,
+            'direccion': self.direccion,
+            'ciudad': self.ciudad,
+            'region': self.region,
+            'numero_contacto': self.celular,
+            'redes_sociales': self.redes_sociales
+        }
 
-    @classmethod
-    def obtener_uno(cls,):
-        return
-    
-    @classmethod
-    def obtener_uno_por_email(cls, email):
-        query = "SELECT * FROM usuarios WHERE email = %(email)s;"
-        data = { 'email': email }
-        result = connectToMySQL(BASE_DATOS).query_db(query, data)
-        
-        # Verificar si se encontró algún usuario con ese correo electrónico
-        if len(result) > 0:
-            return cls(result[0])  # Crear una instancia de Usuario con los datos obtenidos de la consulta
-        else:
-            return None
+        try:
+            connectToMySQL(BASE_DATOS).query_db(query, datos_usuario)
+        except Exception as e:
+            print("Error al actualizar usuario:", e)
+            raise  # Re-raise the exception to get the traceback information
 
     @staticmethod
     def validar_registro(datos):

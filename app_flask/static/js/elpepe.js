@@ -1,20 +1,23 @@
-
-
 document.getElementById('imagen').addEventListener("change", function () {
+    const imageInput = document.getElementById('imagen');
+    const previewImage = document.getElementById('previewImage');
+    const uploadButton = document.getElementById('uploadButton');
+
     const selectedImage = imageInput.files[0];
+
     if (selectedImage) {
         const objectURL = URL.createObjectURL(selectedImage);
 
-        // Update the source of the profile image with the selected image
-        const profileImage = document.getElementById("profileImage");
-        profileImage.src = objectURL;
+        // Actualiza la fuente de la imagen de vista previa con la imagen seleccionada
+        previewImage.src = objectURL;
 
-        document.getElementById("uploadButton").style.display = "block";
+        // Muestra el botón de carga
+        uploadButton.style.display = "block";
     } else {
-        // If no image is selected, reset the source of the profile image
-        const profileImage = document.getElementById("profileImage");
-        profileImage.src = "{{ url_for('static', 'img', filename='lana.png') }"; // aqui va la imagen por defecto
+        // Si no se selecciona ninguna imagen, restablece la fuente de la imagen de vista previa
+        previewImage.src = "/static/img/lana.jpeg"; // Cambia esto a la imagen por defecto
 
-        document.getElementById("uploadButton").style.display = "none";
+        // Oculta el botón de carga
+        uploadButton.style.display = "none";
     }
 });

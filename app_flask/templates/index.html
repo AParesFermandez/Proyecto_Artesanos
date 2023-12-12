@@ -85,26 +85,44 @@
           </div>
         </div>
       </div>
+      <!--aqui estara el mensaje de bienvenida-->
       <div class="auto-layout-vertical6">
         <div class="auto-layout-horizontal4">
-          <img
-            class="logininicio-icon"
-            alt=""
-            src="./static/img/logininicio.svg"
-            id="logininicioIcon"
-          />
+          {% if usuario %}
+            <span class="welcome-message">Bienvenido, {{ usuario.full_name() }}</span>
+            <img
+              src="./static/img/cerrar_sesion.png"
+              alt="Cerrar sesión"
+              class="cerrar-sesion-icon"
+              onclick="location.href='/cerrar_sesion';"
+            />
+          {% else %}
+            <span class="welcome-message">Bienvenido, Invitado</span>
+            <img
+              src="./static/img/logininicio.svg"
+              alt="Iniciar sesión"
+              class="logininicio-icon"
+              onclick="location.href='/login';"
+            />
+          {% endif %}
         </div>
       </div>
-      <div class="menuinicio">
-        <div class="opcionesmenuinicio">
-          <div class="publicar3">
-            <div class="publicar4" id="publicarText">Publicar</div>
-          </div>
-          <div class="publicar3">
-            <div class="publicar4" id="comunidadText">comunidad</div>
+      <!-- Hasta aquí el login -->
+      <!--aqui la logica para que se vea o no el boton publicar-->
+        <div class="menuinicio">
+          <div class="opcionesmenuinicio">
+            {% if usuario %}
+              {% if usuario.tipo_usuario == 1 %}
+                <div class="publicar3">
+                  <div class="publicar4" id="publicarText">Publicar</div>
+                </div>
+              {% endif %}
+            {% endif %}
+            <div class="publicar3">
+              <div class="publicar4" id="comunidadText">comunidad</div>
+            </div>
           </div>
         </div>
-      </div>
       <div class="menucategoriassocialinicio">
         <div class="auto-layout-vertical7">
           <div class="pesebre-asis">Menu</div>

@@ -26,14 +26,26 @@
 
         <div class="magia-hecha-a1">PasiónArtesana</div>
       </div>
+      <!--mensaje usuario mural de noticias-->
       <div class="frame28">
         <div class="loginmuraldenoticias-wrapper">
-          <img
-            class="loginmuraldenoticias-icon"
-            alt=""
-            src="./static/img/logintienda.svg"
-            id="loginmuraldenoticiasIcon"
-          />
+          {% if usuario %}
+            <span class="welcome-message">Bienvenido, {{ usuario.full_name() }}</span>
+            <img
+              src="./static/img/cerrar_sesion.png"
+              alt="Cerrar sesión"
+              class="cerrar-sesion-icon"
+              onclick="location.href='/cerrar_sesion';"
+            />
+          {% else %}
+            <span class="welcome-message">Bienvenido, Invitado</span>
+            <img
+              src="./static/img/logininicio.svg"
+              alt="Iniciar sesión"
+              class="logininicio-icon"
+              onclick="location.href='/login';"
+            />
+          {% endif %}
         </div>
       </div>
       <div class="opcionesmenunoticias">
@@ -43,11 +55,15 @@
               <div class="inicio2" id="inicioText">Inicio</div>
             </div>
           </div>
-          <div class="inicio1">
-            <div class="inicionoticias">
-              <div class="inicio2" id="publicarText">Publicar</div>
-            </div>
-          </div>
+          {% if usuario %}
+            {% if usuario.tipo_usuario == 1 %}
+              <div class="inicio1">
+                <div class="inicionoticias">
+                  <div class="inicio2" id="publicarText">Publicar</div>
+                </div>
+              </div>
+            {% endif %}
+          {% endif %}
         </div>
       </div>
       <div class="mural-de-noticias-inner">

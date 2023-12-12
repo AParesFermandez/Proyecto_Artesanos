@@ -18,31 +18,48 @@
   justify-content: flex-start;
   color: var(--color-orange);
 }
-.loginmuraldenoticias-icon {
-  position: relative;
-  width: 20px;
-  height: 21.1px;
-  cursor: pointer;
-}
-.frame28,
-.loginmuraldenoticias-wrapper {
-  display: flex;
-  flex-direction: row;
-  align-items: center;
-  justify-content: center;
-  padding: var(--padding-base) var(--padding-5xl);
-}
+/* Estilos para la disposición de las imágenes del mensaje de bienvenida para los usuarios*/
 .frame28 {
   position: absolute;
   top: 34px;
   right: 24px;
-  width: 68px;
+  display: flex;
+  align-items: center;
+  width: auto; /* Cambiado el ancho a automático para adaptarse al contenido */
   height: 72.1px;
   overflow: hidden;
-  flex-direction: column;
-  justify-content: flex-end;
-  padding: 0.000003814697265625px var(--padding-0);
+  flex-direction: row; /* Cambiado a dirección de fila */
+  justify-content: flex-end; /* Ajuste al extremo derecho */
+  padding: 0; /* Eliminar el padding para que se ajuste correctamente */
   box-sizing: border-box;
+}
+
+.loginmuraldenoticias-wrapper {
+  display: flex;
+  align-items: center;
+}
+
+/* Estilo para el mensaje de bienvenida */
+.frame28 span.welcome-message {
+  font-size: 16px; /* Tamaño de fuente del mensaje de bienvenida */
+  color: black !important;
+  margin-right: 10px; /* Espacio entre el mensaje y el icono de inicio de sesión */
+}
+
+/* Estilos para la imagen de inicio de sesión */
+.loginmuraldenoticias-icon {
+  width: 20px;
+  height: 21.1px;
+  cursor: pointer;
+  margin-left: 10px; /* Espacio entre el mensaje y el icono de inicio de sesión */
+}
+
+/* Estilos para la imagen de cierre de sesión */
+.cerrar-sesion-icon {
+  width: 20px; /* Ajusta el ancho según sea necesario */
+  height: 20px; /* Ajusta la altura según sea necesario */
+  cursor: pointer;
+  margin-left: 10px; /* Espacio entre la imagen de inicio de sesión y la de cierre de sesión */
 }
 .inicio2 {
   position: relative;
