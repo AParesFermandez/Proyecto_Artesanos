@@ -1,14 +1,20 @@
-document.getElementById('imagen').addEventListener('change', function(event) {
-    const input = event.target;
-    const previewImage = document.getElementById('previewImage');
 
-    if (input.files && input.files[0]) {
-        const reader = new FileReader();
 
-        reader.onload = function(e) {
-            previewImage.src = e.target.result;
-        };
+document.getElementById('imagen').addEventListener("change", function () {
+    const selectedImage = imageInput.files[0];
+    if (selectedImage) {
+        const objectURL = URL.createObjectURL(selectedImage);
 
-        reader.readAsDataURL(input.files[0]);
+        // Update the source of the profile image with the selected image
+        const profileImage = document.getElementById("profileImage");
+        profileImage.src = objectURL;
+
+        document.getElementById("uploadButton").style.display = "block";
+    } else {
+        // If no image is selected, reset the source of the profile image
+        const profileImage = document.getElementById("profileImage");
+        profileImage.src = "{{ url_for('static', 'img', filename='lana.png') }"; // aqui va la imagen por defecto
+
+        document.getElementById("uploadButton").style.display = "none";
     }
 });
